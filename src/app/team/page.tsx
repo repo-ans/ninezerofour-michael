@@ -35,7 +35,8 @@ export default function TeamPage() {
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <Reveal>
               <Media
-                label="On the floor"
+                label="The Nine Zero Four team"
+                src="/team3.webp"
                 ratio="4 / 5"
                 className="rounded-md"
               />
@@ -66,8 +67,11 @@ export default function TeamPage() {
                 <article className="group flex flex-col">
                   <Media
                     label={m.media}
-                    ratio="1 / 1"
-                    className="rounded-full transition-[filter] duration-300 group-hover:brightness-[0.97]"
+                    src={m.image}
+                    objectPosition={m.imagePosition}
+                    ratio="4 / 5"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="rounded-md transition-[filter] duration-300 group-hover:brightness-[0.97]"
                   />
                   <h3 className="mt-5 font-display text-xl tracking-tight">
                     {m.name}
@@ -116,6 +120,15 @@ export default function TeamPage() {
               </RevealItem>
               <RevealItem as="h2" className="display-md max-w-[12ch]">
                 Before you book.
+              </RevealItem>
+              <RevealItem as="div" className="mt-4 hidden md:block">
+                <Media
+                  label="Colour brushes and shears in a back pocket"
+                  src="/team9faq.webp"
+                  ratio="4 / 5"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="rounded-md"
+                />
               </RevealItem>
             </Reveal>
             <Reveal>

@@ -30,9 +30,22 @@ npm run build
 
 All respect `prefers-reduced-motion` (via `<MotionConfig reducedMotion="user">` in `layout.tsx` plus explicit gates on the scroll-scrubbed hero).
 
+## Images
+
+- Client photos live in `public/` and are wired through `src/components/ui/Media.tsx`.
+  `Media` renders `next/image` when given `src`, else a labelled placeholder.
+  Assignments: hero + haircuts tab → `join3`; extensions → `services1`; colour →
+  `services2` / `blog1`; restoration → `services4`; products → `services5` /
+  `team2virtue`; team portraits → `team4amanda`/`team5kayla`/`team7Kaydee`/
+  `team8unnamedavatar`; group shots → `team3` / `join1`; scissors → `join2`.
+- **Still needs a real photo:** `ILE` on the Team page — `team6Ile.webp` is a
+  landscape marketing banner, so that card shows the placeholder. Drop a portrait
+  in `public/` and set `image` / `imagePosition` in `src/content/team.ts`.
+- Portrait crops are tuned per-image with `imagePosition` (CSS `object-position`)
+  in the content files — re-check these when photos are replaced.
+
 ## Placeholders — swap before launch
 
-- **Photography.** Every image is `src/components/ui/Media.tsx` (a labelled placeholder block). Replace with `next/image`; each call site already passes a descriptive `label`. Add real hosts to `next.config.ts` `images.remotePatterns` if remote.
 - **Brand palette / fonts.** Currently a neutral clinical-editorial system (warm off-white + deep ink + one eucalyptus accent, Fraunces + Inter). Edit `:root` in `globals.css` once inspiration lands.
 - **Contact details** (`src/content/site.ts`) — address, phone, hours are transcribed from the current live site. **Confirm with the client.**
 - **Booking.** `/book` and every "Book Now" post to a stub form (`src/components/book/BookingForm.tsx`, `src/components/layout/NewsletterForm.tsx`). Wire to the studio's provider (GHL / Bookedly). The `/book` sidebar has a slot for an embed.
@@ -41,4 +54,4 @@ All respect `prefers-reduced-motion` (via `<MotionConfig reducedMotion="user">` 
 ## Known follow-ups
 
 - Hair-restoration line is folded into Services as the "Scalp & Restoration" category; promote to its own page/nav item if the client wants it more prominent.
-- Consider a real image for the hero so the scroll-panel effect reads fully.
+- Team member roles in `src/content/team.ts` are drafted — confirm against the real team.

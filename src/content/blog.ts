@@ -6,6 +6,7 @@ export type BlogPost = {
   category: string;
   excerpt: string;
   media: string;
+  image?: string;
   /** Body as an array of paragraphs (placeholder copy). */
   body: string[];
 };
@@ -19,7 +20,8 @@ export const posts: BlogPost[] = [
     category: "Restoration",
     excerpt:
       "Density, miniaturisation, inflammation, follicular units per zone — the language behind the images we take at your first visit.",
-    media: "Trichoscope imaging",
+    media: "Colour-matching at the station",
+    image: "/services4.webp",
     body: [
       "Most people arrive at a consultation with one question: is my hair falling out? The honest answer is that everyone sheds — the useful question is whether the hair growing back is as strong as the hair that left, and where that balance is shifting.",
       "Under magnification we can see the width of individual strands within a follicular unit. When thicker terminal hairs are being replaced by finer, shorter ones, that's miniaturisation, and it tends to follow a pattern. Mapping it across defined zones of the scalp gives us a baseline we can measure against three and six months later.",
@@ -35,7 +37,8 @@ export const posts: BlogPost[] = [
     category: "Colour",
     excerpt:
       "Why we lighten in stages, what bond additives really do, and how to tell if your hair can take another session.",
-    media: "Foil placement",
+    media: "Mixing colour at the station",
+    image: "/blog1.webp",
     body: [
       "The fastest route to bright blonde is almost never the healthiest one. Hair has a finite amount of structural protein, and every lightening service spends some of it. Our job is to spend it slowly.",
       "Working in stages — lifting part of the head, or lifting less per visit — lets us assess how your hair responds before committing further. Bond-protecting additives help, but they're insurance, not permission to over-process.",
@@ -50,7 +53,8 @@ export const posts: BlogPost[] = [
     category: "Extensions",
     excerpt:
       "The home-care habits that decide whether your move-up is comfortable or overdue.",
-    media: "Hand-tied wefts",
+    media: "Holding a hand-tied weft",
+    image: "/blog2.webp",
     body: [
       "Extensions fail early for predictable reasons: sleeping on wet hair, skipping the loop brush, and letting product build up at the foundation.",
       "Dry your roots before bed, brush from the ends up twice a day, and clarify the attachment area weekly. Book your move-up at six to nine weeks — waiting longer puts tension on your own hair.",
@@ -65,7 +69,8 @@ export const posts: BlogPost[] = [
     category: "Treatments",
     excerpt:
       "Four products, three habits, and the one weekly step most people skip.",
-    media: "Home-care shelf",
+    media: "In-studio treatment products",
+    image: "/team2virtue.webp",
     body: [
       "You don't need ten products. You need a gentle cleanser, a conditioner matched to your length, a weekly treatment, and heat protection — used consistently.",
       "The step most people skip is the weekly scalp cleanse. Build-up doesn't just dull your hair; it slows the follicle. Five minutes with an exfoliating scalp product once a week changes how the next appointment goes.",

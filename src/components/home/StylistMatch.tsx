@@ -10,7 +10,8 @@ export function StylistMatch() {
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal className="order-2 md:order-1">
             <Media
-              label="Consultation room"
+              label="A colourist mixing at the station"
+              src="/services2.webp"
               ratio="5 / 4"
               tone="sand"
               className="rounded-md"

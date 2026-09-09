@@ -54,7 +54,10 @@ export default async function BlogPostPage({
           <Reveal>
             <Media
               label={post.media}
+              src={post.image}
               ratio="16 / 9"
+              priority
+              sizes="(min-width: 832px) 832px, 100vw"
               className="rounded-md"
             />
           </Reveal>

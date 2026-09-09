@@ -10,9 +10,11 @@ export function ProductsSplit() {
         <Reveal className="relative min-h-[60vw] md:min-h-[36rem]">
           <div className="absolute inset-0">
             <Media
-              label="Home-care shelf"
+              label="The retail shelf at Nine Zero Four"
+              src="/services5.webp"
               ratio="auto"
               tone="ink"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="h-full w-full"
             />
           </div>

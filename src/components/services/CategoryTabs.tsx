@@ -60,11 +60,13 @@ export function CategoryTabs({
               >
                 <Media
                   label={cat.media}
+                  src={cat.image}
                   tone="ink"
                   ratio="auto"
+                  sizes="240px"
                   className="h-full w-full"
                 />
-                <span className="absolute inset-0 bg-ink/40" />
+                <span className="absolute inset-0 bg-ink/35" />
               </motion.span>
               <span
                 className={cn(

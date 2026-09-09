@@ -65,9 +65,11 @@ export default function JoinUsPage() {
             </Reveal>
             <Reveal>
               <Media
-                label="Studio — culture"
+                label="A stylist holding shears"
+                src="/join2.webp"
                 ratio="5 / 4"
                 tone="ink"
+                objectPosition="50% 30%"
                 className="rounded-md"
               />
             </Reveal>

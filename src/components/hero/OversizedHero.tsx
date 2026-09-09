@@ -12,6 +12,7 @@ export function OversizedHero({
   cta,
   headline,
   mediaLabel = "Studio hero",
+  mediaSrc,
   align = "left",
 }: {
   eyebrow?: string;
@@ -20,6 +21,7 @@ export function OversizedHero({
   /** Rendered oversized, anchored to the bottom, bleeding off the edge. */
   headline: string;
   mediaLabel?: string;
+  mediaSrc?: string;
   align?: "left" | "right";
 }) {
   return (
@@ -27,8 +29,11 @@ export function OversizedHero({
       <div className="absolute inset-0">
         <Media
           label={mediaLabel}
+          src={mediaSrc}
           tone="ink"
           ratio="auto"
+          priority
+          sizes="100vw"
           className="h-full w-full"
         />
       </div>

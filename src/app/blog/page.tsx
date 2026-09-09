@@ -38,7 +38,9 @@ export default function BlogPage() {
               <Link href={`/blog/${post.slug}`} className="group block">
                 <Media
                   label={post.media}
+                  src={post.image}
                   ratio="3 / 2"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="rounded-md transition-[filter] duration-300 group-hover:brightness-[0.97]"
                 />
                 <p className="mt-5 text-xs tracking-[0.2em] text-ink-soft uppercase">

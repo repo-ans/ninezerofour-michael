@@ -17,7 +17,8 @@ export default function HomePage() {
             intro="Advanced hair restoration, dimensional colour, and natural extensions — delivered with clinical precision in Ponte Vedra Beach."
             cta={{ label: "Book a consultation", href: "/book" }}
             headline="HAIR, STUDIED."
-            mediaLabel="Studio hero"
+            mediaLabel="A stylist finishing a blow-dry at the chair"
+            mediaSrc="/join3.webp"
           />
         }
       >

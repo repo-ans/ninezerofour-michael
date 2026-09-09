@@ -3,8 +3,10 @@ export type ServiceCategory = {
   label: string;
   /** One-line description shown when the tab is active. */
   blurb: string;
-  /** Placeholder media label — swap for real photography later. */
+  /** Media label (alt text). */
   media: string;
+  /** Photo revealed behind the tab on hover (path under /public). */
+  image: string;
 };
 
 export type Service = {
@@ -26,38 +28,44 @@ export const serviceCategories: ServiceCategory[] = [
     id: "all",
     label: "All",
     blurb: "Every service across the studio.",
-    media: "All services",
+    media: "The Nine Zero Four studio",
+    image: "/services3.webp",
   },
   {
     id: "restoration",
     label: "Scalp & Restoration",
     blurb:
       "Assessment-led programmes for thinning, shedding, and density — the clinical core of the studio.",
-    media: "Scalp analysis",
+    media: "Scalp and density assessment",
+    image: "/services4.webp",
   },
   {
     id: "color",
     label: "Colour",
     blurb: "Dimensional blonding and lived-in colour, mapped to your hair's history.",
-    media: "Colour work",
+    media: "Colourist at the mixing station",
+    image: "/services2.webp",
   },
   {
     id: "extensions",
     label: "Extensions",
     blurb: "Hand-tied and individual methods for seamless length and fullness.",
-    media: "Extension bar",
+    media: "The extension bar",
+    image: "/services1.webp",
   },
   {
     id: "haircuts",
     label: "Haircuts",
     blurb: "Precision cutting and dry-detail finishing for every texture.",
-    media: "Precision cut",
+    media: "Blow-dry and finish at the chair",
+    image: "/join3.webp",
   },
   {
     id: "treatments",
     label: "Treatments",
     blurb: "In-studio conditioning, bond repair, and scalp therapies.",
-    media: "Treatment room",
+    media: "In-studio treatment products",
+    image: "/team2virtue.webp",
   },
 ];
 

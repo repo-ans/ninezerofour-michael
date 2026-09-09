@@ -6,19 +6,22 @@ import { Media } from "@/components/ui/Media";
 const tiles = [
   {
     label: "Scalp & Restoration",
-    media: "Scalp therapy",
+    media: "A stylist assessing and matching hair",
+    image: "/services4.webp",
     copy: "Assessment-led programmes for thinning and density — imaged, staged, and reviewed against a baseline.",
     href: "/services",
   },
   {
     label: "Dimensional Colour",
-    media: "Colour placement",
+    media: "Mixing colour at the station",
+    image: "/blog1.webp",
     copy: "Hand-painted and foiled lightening mapped to your hair's history, worked in stages to protect it.",
     href: "/services",
   },
   {
     label: "Natural Extensions",
-    media: "Extension bar",
+    media: "The extension bar",
+    image: "/services1.webp",
     copy: "Hand-tied and individual methods, colour-matched and cut so the transition is invisible.",
     href: "/services",
   },
@@ -33,8 +36,10 @@ export function TileTrio() {
             <Link href={tile.href} className="group block">
               <Media
                 label={tile.media}
+                src={tile.image}
                 ratio="4 / 5"
                 tone="sand"
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="rounded-md transition-[filter] duration-300 group-hover:brightness-[0.97]"
               />
               <h3 className="mt-5 font-display text-xl tracking-tight">
