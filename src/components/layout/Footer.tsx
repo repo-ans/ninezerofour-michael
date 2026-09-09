@@ -89,10 +89,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-inverse-line pt-8 text-xs text-inverse-ink/55">
-          <p className="max-w-2xl">{site.policy}</p>
-          <p className="mt-4">
-            &copy; {year} {site.name} {site.tagline}. All rights reserved.
+        <div className="mt-16 flex flex-col gap-4 border-t border-inverse-line pt-8 text-xs text-inverse-ink/55 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="max-w-2xl">{site.policy}</p>
+            <p className="mt-4">
+              &copy; {year} {site.name} {site.tagline}. All rights reserved.
+            </p>
+          </div>
+          <p className="shrink-0">
+            Designed &amp; developed by{" "}
+            <a
+              href="https://aniyanetworks.net/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline transition-colors hover:text-inverse-ink"
+            >
+              &copy; {year} Aniya Network Solutions Inc.
+            </a>
           </p>
         </div>
       </Container>
