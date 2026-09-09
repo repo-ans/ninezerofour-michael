@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { Accordion, type AccordionItem } from "@/components/ui/Accordion";
 import { ButtonLink } from "@/components/ui/Button";
 import { serviceCategories, servicesByCategory } from "@/content/services";
@@ -44,9 +45,14 @@ export function PricingAccordion() {
           <RevealItem as="p" className="eyebrow">
             Pricing
           </RevealItem>
-          <RevealItem as="h2" className="display-md max-w-[12ch]">
-            Clear starting points.
-          </RevealItem>
+          <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[12ch]"
+              >
+                Clear starting points.
+              </SplitText>
           <RevealItem as="p" className="text-ink-soft">
             Figures below are where each service begins. Your exact quote is
             confirmed at consultation or before service — never at checkout.

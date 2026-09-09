@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 
 export function CtaBand({
   title = "Ready to experience the Nine Zero Four difference?",
@@ -21,15 +22,23 @@ export function CtaBand({
     <section className="bg-inverse text-inverse-ink">
       <Container className="py-20 md:py-28">
         <Reveal group className="flex flex-col gap-6">
-          <RevealItem
+          <SplitText
             as="h2"
+            split="words"
+            effect="mask"
             className="display-lg max-w-[16ch] text-inverse-ink"
           >
             {title}
-          </RevealItem>
-          <RevealItem as="p" className="max-w-[46ch] text-inverse-ink/70">
+          </SplitText>
+          <SplitText
+            as="p"
+            split="lines"
+            effect="fade"
+            duration={0.5}
+            className="max-w-[46ch] text-inverse-ink/70"
+          >
             {body}
-          </RevealItem>
+          </SplitText>
           <RevealItem as="div" className="flex flex-wrap gap-3 pt-2">
             <ButtonLink href={ctaHref} variant="inverse">
               {ctaLabel}

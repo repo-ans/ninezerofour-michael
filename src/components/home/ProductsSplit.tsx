@@ -1,4 +1,5 @@
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { Media } from "@/components/ui/Media";
 
 const brands = ["amika", "Virtue", "L'Oréal Professionnel", "Redken", "K18"];
@@ -26,9 +27,14 @@ export function ProductsSplit() {
           <RevealItem as="p" className="eyebrow text-inverse-ink/50">
             The shelf
           </RevealItem>
-          <RevealItem as="h2" className="display-md max-w-[16ch] text-inverse-ink">
-            What we use in-studio is what we send you home with.
-          </RevealItem>
+          <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[16ch] text-inverse-ink"
+              >
+                What we use in-studio is what we send you home with.
+              </SplitText>
           <RevealItem as="p" className="max-w-[46ch] text-inverse-ink/70">
             We stock a short, deliberate range — clinical scalp care, bond
             repair, and colour-safe daily products — and we only recommend what

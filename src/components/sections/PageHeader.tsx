@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { cn } from "@/lib/cn";
 
 export function PageHeader({
@@ -12,7 +13,7 @@ export function PageHeader({
 }: {
   eyebrow?: string;
   title: string;
-  intro?: ReactNode;
+  intro?: string;
   children?: ReactNode;
   className?: string;
 }) {
@@ -30,13 +31,24 @@ export function PageHeader({
               {eyebrow}
             </RevealItem>
           ) : null}
-          <RevealItem as="h1" className="display-lg max-w-[16ch]">
+          <SplitText
+            as="h1"
+            split="words"
+            effect="mask"
+            className="display-lg max-w-[16ch]"
+          >
             {title}
-          </RevealItem>
+          </SplitText>
           {intro ? (
-            <RevealItem as="p" className="max-w-[54ch] text-lg text-ink-soft">
+            <SplitText
+              as="p"
+              split="lines"
+              effect="fade"
+              duration={0.5}
+              className="max-w-[54ch] text-lg text-ink-soft"
+            >
               {intro}
-            </RevealItem>
+            </SplitText>
           ) : null}
           {children ? <RevealItem as="div">{children}</RevealItem> : null}
         </Reveal>

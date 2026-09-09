@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { Media } from "@/components/ui/Media";
 import { ButtonLink } from "@/components/ui/Button";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -49,9 +50,14 @@ export default function JoinUsPage() {
               <RevealItem as="p" className="eyebrow">
                 Your future at Nine Zero Four
               </RevealItem>
-              <RevealItem as="h2" className="display-md max-w-[18ch]">
+              <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[18ch]"
+              >
                 Be part of something deliberately small.
-              </RevealItem>
+              </SplitText>
               <RevealItem as="p" className="text-ink-soft">
                 We keep the team compact so every person gets attention, mentorship,
                 and room to specialise. If you care about craft and want to work

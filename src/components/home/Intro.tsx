@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { ButtonLink } from "@/components/ui/Button";
 
 const stats = [
@@ -16,18 +17,29 @@ export function Intro() {
           <RevealItem as="p" className="eyebrow">
             Ponte Vedra Beach
           </RevealItem>
-          <RevealItem as="h2" className="display-md max-w-[14ch]">
+          <SplitText
+            as="h2"
+            split="words"
+            effect="rise"
+            className="display-md max-w-[14ch]"
+          >
             Hair concerns deserve the same rigour as skin.
-          </RevealItem>
+          </SplitText>
         </Reveal>
 
         <Reveal group className="flex flex-col gap-6">
-          <RevealItem as="p" className="text-lg leading-relaxed">
+          <SplitText
+            as="p"
+            split="lines"
+            effect="fade"
+            duration={0.5}
+            className="text-lg leading-relaxed"
+          >
             Nine Zero Four is a studio for advanced hair restoration, dimensional
             colour, and natural extensions. Every client begins with a seated
             assessment — magnified imaging, a review of your history, and a
             written plan — before a single service is booked.
-          </RevealItem>
+          </SplitText>
           <RevealItem as="p" className="text-ink-soft">
             It is a calmer, more clinical way to work: measured, documented, and
             built entirely around your hair rather than a template.

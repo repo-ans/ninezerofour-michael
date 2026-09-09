@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { Media } from "@/components/ui/Media";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -22,9 +23,14 @@ export function StylistMatch() {
             <RevealItem as="p" className="eyebrow">
               Find your stylist match
             </RevealItem>
-            <RevealItem as="h2" className="display-md max-w-[16ch]">
-              Priced by the stylist, not by a menu.
-            </RevealItem>
+            <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[16ch]"
+              >
+                Priced by the stylist, not by a menu.
+              </SplitText>
             <RevealItem as="p" className="text-ink-soft">
               Each of our specialists sets pricing by their level and the time
               your hair genuinely needs. That&rsquo;s why every price is shown as

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Media } from "@/components/ui/Media";
+import { SplitText } from "@/components/motion/SplitText";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 
@@ -77,21 +78,23 @@ export function OversizedHero({
       </motion.div>
 
       {/* oversized bottom headline — bleeds past the viewport edge */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease, delay: 0.05 }}
-        className="relative z-10 w-full overflow-hidden pb-[3vh]"
-      >
-        <h1
+      <div className="relative z-10 w-full overflow-hidden pb-[3vh]">
+        <SplitText
+          as="h1"
+          split="chars"
+          effect="mask"
+          trigger="load"
+          duration={0.7}
+          stagger={0.028}
+          delay={0.15}
           className={cn(
             "display-xl px-(--gutter) whitespace-nowrap text-paper",
             align === "right" ? "text-right" : "-ml-[0.04em]",
           )}
         >
           {headline}
-        </h1>
-      </motion.div>
+        </SplitText>
+      </div>
     </div>
   );
 }

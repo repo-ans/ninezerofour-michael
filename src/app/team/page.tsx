@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { SplitText } from "@/components/motion/SplitText";
 import { Media } from "@/components/ui/Media";
 import { Accordion, type AccordionItem } from "@/components/ui/Accordion";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -45,9 +46,14 @@ export default function TeamPage() {
               <RevealItem as="p" className="eyebrow">
                 Leading with expertise
               </RevealItem>
-              <RevealItem as="h2" className="display-md max-w-[16ch]">
+              <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[16ch]"
+              >
                 Blonding, extensions, restoration, and PMU — under one roof.
-              </RevealItem>
+              </SplitText>
               <RevealItem as="p" className="text-ink-soft">
                 Nine Zero Four serves Ponte Vedra Beach and greater Jacksonville
                 with a team that trains continuously and holds current
@@ -118,9 +124,14 @@ export default function TeamPage() {
               <RevealItem as="p" className="eyebrow">
                 F.A.Qs
               </RevealItem>
-              <RevealItem as="h2" className="display-md max-w-[12ch]">
+              <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[12ch]"
+              >
                 Before you book.
-              </RevealItem>
+              </SplitText>
               <RevealItem as="div" className="mt-4 hidden md:block">
                 <Media
                   label="Colour brushes and shears in a back pocket"
