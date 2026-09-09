@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
+import { useLenis } from "lenis/react";
 import type { Service } from "@/content/services";
 import { serviceCategories } from "@/content/services";
 import { site } from "@/content/site";
@@ -23,11 +24,13 @@ export function ServiceModal({
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const lenis = useLenis();
 
   useEffect(() => {
     if (!service) return;
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    lenis?.stop();
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -39,9 +42,10 @@ export function ServiceModal({
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+      lenis?.start();
       window.clearTimeout(t);
     };
-  }, [service, onClose]);
+  }, [service, onClose, lenis]);
 
   if (typeof document === "undefined") return null;
 
@@ -71,6 +75,7 @@ export function ServiceModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="service-modal-title"
+            data-lenis-prevent
             className="relative max-h-[88vh] w-full overflow-y-auto rounded-t-md bg-panel p-6 sm:max-w-lg sm:rounded-md sm:p-8"
             variants={{
               hidden: { opacity: 0, scale: 0.95, y: 8 },

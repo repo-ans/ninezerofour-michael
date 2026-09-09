@@ -104,6 +104,25 @@
       scroll-behavior: auto;
     }
   }
+
+  /* Lenis smooth scroll — while active it owns scrolling, so drop the
+     native smooth behaviour and let it manage document height. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
 }
 
 @layer components {

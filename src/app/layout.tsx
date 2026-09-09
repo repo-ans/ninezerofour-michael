@@ -5,6 +5,7 @@ import { site } from "@/content/site";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -41,9 +42,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-paper">
         <MotionProvider>
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <SmoothScroll>
+            <Nav />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </SmoothScroll>
         </MotionProvider>
       </body>
     </html>
