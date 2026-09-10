@@ -41,8 +41,8 @@ export function Nav() {
     };
   }, [open, lenis]);
 
-  // Only the home page has a dark full-bleed hero for the nav to sit over.
-  const overHero = pathname === "/";
+  // Pages with a dark full-bleed hero for the nav to sit over.
+  const overHero = pathname === "/" || pathname === "/hair-restoration";
   const solid = scrolled || open || !overHero;
 
   return (

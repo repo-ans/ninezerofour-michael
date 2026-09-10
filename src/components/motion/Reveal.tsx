@@ -9,6 +9,7 @@ type Tag =
   | "div"
   | "section"
   | "ul"
+  | "ol"
   | "p"
   | "h1"
   | "h2"
@@ -22,6 +23,7 @@ const MOTION: Record<Tag, ElementType> = {
   div: motion.div,
   section: motion.section,
   ul: motion.ul,
+  ol: motion.ol,
   p: motion.p,
   h1: motion.h1,
   h2: motion.h2,
