@@ -42,7 +42,7 @@ export function Nav() {
   }, [open, lenis]);
 
   // Pages with a dark full-bleed hero for the nav to sit over.
-  const overHero = pathname === "/" || pathname === "/hair-restoration";
+  const overHero = pathname === "/" || pathname === "/crlab";
   const solid = scrolled || open || !overHero;
 
   return (

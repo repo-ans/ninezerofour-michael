@@ -23,6 +23,8 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
         wheelMultiplier: 1,
         touchMultiplier: 1.6,
         syncTouch: false,
+        // Handle same-page #anchor links (Lenis otherwise fights the jump).
+        anchors: { offset: -100 },
       }}
     >
       <LenisRaf />

@@ -7,6 +7,7 @@ import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { OversizedHero } from "@/components/hero/OversizedHero";
 import { CrlabMark, CoBrandLockup } from "@/components/brand/CrlabMark";
+import { GhlForm } from "@/components/forms/GhlForm";
 import {
   protocol,
   pillars,
@@ -17,7 +18,7 @@ import {
 } from "@/content/protocol";
 
 export const metadata: Metadata = {
-  title: "Hair Restoration — The Nine Zero Four × CRLAB Protocol",
+  title: "The CRLAB Protocol",
   description:
     "One integrated journey for every hair and scalp concern — consultation, trichology, CNC hair systems, regenerative medicine, hair transplant, and Hair SPA. Nine Zero Four in partnership with CRLAB.",
 };
@@ -32,7 +33,7 @@ const coBrand = {
   "--inverse-line": "#54463a",
 } as CSSProperties;
 
-const bookHref = "/book?service=scalp-consultation";
+const bookHref = "#crlab-contact";
 
 export default function HairRestorationPage() {
   return (
@@ -308,13 +309,51 @@ export default function HairRestorationPage() {
               className="flex flex-wrap items-center gap-5 pt-3"
             >
               <ButtonLink href={bookHref} variant="inverse">
-                Book a consultation
+                Request a consultation
               </ButtonLink>
               <span className="font-display text-lg text-inverse-ink/55 italic">
                 {closing.cta.signoff}
               </span>
             </RevealItem>
           </Reveal>
+        </Container>
+      </section>
+
+      {/* CONTACT — GHL form */}
+      <section
+        id="crlab-contact"
+        className="scroll-mt-24 bg-panel-2 md:scroll-mt-28"
+      >
+        <Container className="py-20 md:py-28">
+          <div className="mx-auto max-w-[640px]">
+            <Reveal group className="flex flex-col gap-4 text-center">
+              <RevealItem as="p" className="eyebrow">
+                {protocol.eyebrow}
+              </RevealItem>
+              <SplitText
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md"
+              >
+                Request your consultation.
+              </SplitText>
+              <RevealItem
+                as="p"
+                className="mx-auto max-w-[42ch] text-ink-soft"
+              >
+                Leave your details and the studio will be in touch to book your
+                first assessment.
+              </RevealItem>
+            </Reveal>
+
+            <Reveal className="mt-10">
+              <GhlForm
+                formId="5TPCGA4FcAmxkPV6Cito"
+                title="Nine Zero Four × CRLAB — Contact Us"
+              />
+            </Reveal>
+          </div>
         </Container>
       </section>
     </div>

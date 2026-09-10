@@ -1,5 +1,5 @@
 /**
- * Content for the co-branded Nine Zero Four × CRLAB landing page (/hair-restoration).
+ * Content for the co-branded Nine Zero Four × CRLAB landing page (/crlab).
  * Adapted from the CRLAB "Positioning 2026 — The CRLAB Protocol" deck.
  */
 

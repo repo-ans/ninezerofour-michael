@@ -4,7 +4,7 @@ export type NavItem = { label: string; href: string };
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Restoration", href: "/hair-restoration" },
+  { label: "CRLAB", href: "/crlab" },
   { label: "Team", href: "/team" },
   { label: "Join Us", href: "/join-us" },
   { label: "Blog", href: "/blog" },

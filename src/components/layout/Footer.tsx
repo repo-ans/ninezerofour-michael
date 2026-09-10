@@ -92,8 +92,22 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-4 border-t border-inverse-line pt-8 text-xs text-inverse-ink/55 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="max-w-2xl">{site.policy}</p>
-            <p className="mt-4">
-              &copy; {year} {site.name} {site.tagline}. All rights reserved.
+            <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span>
+                &copy; {year} {site.name} {site.tagline}. All rights reserved.
+              </span>
+              <Link
+                href="/privacy"
+                className="underline transition-colors hover:text-inverse-ink"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="underline transition-colors hover:text-inverse-ink"
+              >
+                Terms of Service
+              </Link>
             </p>
           </div>
           <p className="shrink-0">
