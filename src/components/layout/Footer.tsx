@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { navItems, site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
+import { SmartLink } from "@/components/ui/SmartLink";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
 
 export function Footer() {
@@ -63,12 +64,12 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link
+                <SmartLink
                   href={site.bookUrl}
                   className="text-inverse-ink/80 hover:text-inverse-ink"
                 >
                   Book Now
-                </Link>
+                </SmartLink>
               </li>
             </ul>
             <p className="eyebrow mt-6 text-inverse-ink/50">Follow</p>

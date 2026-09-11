@@ -129,12 +129,14 @@ export function ServiceModal({
             </ul>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href={`${site.bookUrl}?service=${service.slug}`}
+              <a
+                href={site.bookUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex h-11 flex-1 items-center justify-center rounded-sm bg-ink px-6 text-sm font-medium text-paper transition-colors hover:bg-accent"
               >
                 Book this service
-              </Link>
+              </a>
               <Link
                 href="/book"
                 onClick={onClose}

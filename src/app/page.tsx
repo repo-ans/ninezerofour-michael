@@ -6,6 +6,7 @@ import { TileTrio } from "@/components/home/TileTrio";
 import { ProductsSplit } from "@/components/home/ProductsSplit";
 import { PricingAccordion } from "@/components/home/PricingAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { site } from "@/content/site";
 
 export default function HomePage() {
   return (
@@ -15,7 +16,7 @@ export default function HomePage() {
           <OversizedHero
             eyebrow="Nine Zero Four Beauty Bar"
             intro="Advanced hair restoration, dimensional colour, and natural extensions — delivered with clinical precision in Ponte Vedra Beach."
-            cta={{ label: "Book a consultation", href: "/book" }}
+            cta={{ label: "Book a consultation", href: site.bookUrl }}
             headline="HAIR, STUDIED."
             mediaLabel="A stylist finishing a blow-dry at the chair"
             mediaSrc="/join3.webp"

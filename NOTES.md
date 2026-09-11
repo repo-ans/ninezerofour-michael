@@ -47,9 +47,19 @@ All respect `prefers-reduced-motion` (via `<MotionConfig reducedMotion="user">` 
 ## Placeholders — swap before launch
 
 - **Brand palette / fonts.** Currently a neutral clinical-editorial system (warm off-white + deep ink + one eucalyptus accent, Fraunces + Inter). Edit `:root` in `globals.css` once inspiration lands.
-- **Contact details** (`src/content/site.ts`) — address, phone, hours are transcribed from the current live site. **Confirm with the client.**
-- **Booking.** `/book` and every "Book Now" post to a stub form (`src/components/book/BookingForm.tsx`, `src/components/layout/NewsletterForm.tsx`). Wire to the studio's provider (GHL / Bookedly). The `/book` sidebar has a slot for an embed.
+- **Contact details** (`src/content/site.ts`) — email, hours, and the Vagaro
+  booking link are the client's real values (email `ninezerofourpvb@gmail.com`,
+  Vagaro `vagaro.com/ninezerofourbeautybar1`). Address + phone still from the
+  current live site — confirm. `site.contacts` holds the studio owner names
+  (internal reference, not shown on the site). Socials still point to bare
+  domains — add the real handles.
+- **Booking.** "Book Now" everywhere links to **Vagaro** in a new tab
+  (`site.bookUrl` → `SmartLink` / `ButtonLink` auto-detect absolute URLs).
+  `/book` keeps a "Send a message" form (`BookingForm`) for questions and the
+  `?intent=careers` application flow — it is not connected to anything yet
+  (`onSubmit` is a stub). `/crlab` converts via its own embedded GHL form.
 - **Blog.** 4 placeholder posts in `src/content/blog.ts`. No CMS — content is typed files for now.
+- **`metadataBase`** in `layout.tsx` is `https://www.ninezerofourbeautybar.com` — update if the domain differs.
 
 ## Known follow-ups
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import type { Service } from "@/content/services";
 import { ease } from "@/lib/motion";
@@ -24,7 +23,6 @@ export function ServiceCard({
   service: Service;
   onOpen: (service: Service) => void;
 }) {
-  const router = useRouter();
   const reduce = useReducedMotion();
 
   return (
@@ -67,7 +65,7 @@ export function ServiceCard({
           type="button"
           onClick={(e) => {
             e.stopPropagation();
-            router.push(`${site.bookUrl}?service=${service.slug}`);
+            window.open(site.bookUrl, "_blank", "noopener,noreferrer");
           }}
           className="h-9 rounded-sm bg-ink px-4 text-sm font-medium text-paper transition-colors hover:bg-accent"
         >

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { SmartLink } from "@/components/ui/SmartLink";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
@@ -97,18 +97,20 @@ export default function TeamPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link
+                  <SmartLink
                     href={m.bookUrl}
                     className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-medium"
                   >
-                    Book with {m.name.split(" ")[0]}
+                    {m.slug === "new-chair"
+                      ? "See openings"
+                      : `Book with ${m.name.split(" ")[0]}`}
                     <span
                       aria-hidden
                       className="transition-transform group-hover:translate-x-1"
                     >
                       &rarr;
                     </span>
-                  </Link>
+                  </SmartLink>
                 </article>
               </RevealItem>
             ))}

@@ -1,32 +1,67 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/sections/PageHeader";
-import { Reveal } from "@/components/motion/Reveal";
+import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { ButtonLink } from "@/components/ui/Button";
 import { BookingForm } from "@/components/book/BookingForm";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Book Now",
   description:
-    "Request an appointment or consultation at Nine Zero Four Beauty Bar, Ponte Vedra Beach.",
+    "Book an appointment at Nine Zero Four Beauty Bar online through Vagaro, or send the studio a message.",
 };
 
 export default async function BookPage({ searchParams }: PageProps<"/book">) {
   const sp = await searchParams;
   const first = (v: string | string[] | undefined) =>
     Array.isArray(v) ? v[0] : v;
+  const isCareers = first(sp.intent) === "careers";
 
   return (
     <>
       <PageHeader
-        eyebrow="Book Now"
-        title="Reserve a chair."
-        intro="Send a request below and a team member confirms your time within one business day. New colour, extension, and restoration clients start with a consultation."
+        eyebrow={isCareers ? "Careers" : "Book Now"}
+        title={isCareers ? "Apply to join us." : "Reserve a chair."}
+        intro={
+          isCareers
+            ? "Tell us where you are in your career and what you want to build. We read every application."
+            : "Appointments are booked online through Vagaro. For anything else — a question, a detailed request — send the studio a message below."
+        }
       />
+
+      {!isCareers ? (
+        <section className="border-b border-line bg-panel-2">
+          <Container className="py-14 md:py-16">
+            <Reveal
+              group
+              className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between"
+            >
+              <RevealItem as="div" className="flex flex-col gap-1">
+                <p className="font-display text-2xl tracking-tight">
+                  Book online
+                </p>
+                <p className="max-w-[48ch] text-sm text-ink-soft">
+                  Live availability, instant confirmation, and a card on file —
+                  all handled through Vagaro.
+                </p>
+              </RevealItem>
+              <RevealItem as="div">
+                <ButtonLink href={site.bookUrl}>
+                  Book on Vagaro &rarr;
+                </ButtonLink>
+              </RevealItem>
+            </Reveal>
+          </Container>
+        </section>
+      ) : null}
 
       <Container className="py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-[1.3fr_0.7fr] md:gap-16">
-          <Reveal>
+          <Reveal className="flex flex-col gap-4">
+            {!isCareers ? (
+              <p className="eyebrow">Send a message</p>
+            ) : null}
             <BookingForm
               presetService={first(sp.service)}
               presetStylist={first(sp.with)}
@@ -48,10 +83,7 @@ export default async function BookPage({ searchParams }: PageProps<"/book">) {
                 <a href={site.phoneHref} className="block hover:text-ink">
                   {site.phone}
                 </a>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="block hover:text-ink"
-                >
+                <a href={site.emailHref} className="block hover:text-ink">
                   {site.email}
                 </a>
               </p>
@@ -61,14 +93,10 @@ export default async function BookPage({ searchParams }: PageProps<"/book">) {
               <ul className="mt-3 space-y-1 text-sm text-ink-soft">
                 {site.hours.map((h) => (
                   <li key={h.day}>
-                    {h.day} — {h.time}
+                    {h.day} &mdash; {h.time}
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="rounded-md border border-dashed border-line p-4 text-xs text-ink-soft">
-              Online scheduling embed goes here once the studio&rsquo;s booking
-              provider is connected.
             </div>
           </Reveal>
         </div>

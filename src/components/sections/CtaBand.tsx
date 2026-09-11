@@ -2,12 +2,13 @@ import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
+import { site } from "@/content/site";
 
 export function CtaBand({
   title = "Ready to experience the Nine Zero Four difference?",
   body = "Start with a consultation. We'll assess your hair, answer every question, and build a plan around where you want to be.",
   ctaLabel = "Book an appointment",
-  ctaHref = "/book",
+  ctaHref = site.bookUrl,
   secondaryLabel,
   secondaryHref,
 }: {

@@ -4,6 +4,7 @@ import { SplitText } from "@/components/motion/SplitText";
 import { Accordion, type AccordionItem } from "@/components/ui/Accordion";
 import { ButtonLink } from "@/components/ui/Button";
 import { serviceCategories, servicesByCategory } from "@/content/services";
+import { site } from "@/content/site";
 
 function priceRange(categoryId: string) {
   const priced = servicesByCategory(categoryId).filter((s) => s.priceFrom > 0);
@@ -58,7 +59,7 @@ export function PricingAccordion() {
             confirmed at consultation or before service — never at checkout.
           </RevealItem>
           <RevealItem as="div" className="pt-1">
-            <ButtonLink href="/book" size="sm">
+            <ButtonLink href={site.bookUrl} size="sm">
               Book a consultation
             </ButtonLink>
           </RevealItem>

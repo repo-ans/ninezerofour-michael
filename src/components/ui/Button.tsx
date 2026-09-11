@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { isExternal } from "@/lib/href";
 
 type Variant = "solid" | "outline" | "ghost" | "inverse";
 type Size = "sm" | "md";
@@ -49,12 +50,18 @@ export function ButtonLink({
   href,
   ...rest
 }: CommonProps & ComponentProps<typeof Link>) {
+  const classes = cn(base, sizes[size], variants[variant], className);
+
+  if (isExternal(href)) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={cn(base, sizes[size], variants[variant], className)}
-      {...rest}
-    >
+    <Link href={href} className={classes} {...rest}>
       {children}
     </Link>
   );

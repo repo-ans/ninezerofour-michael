@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ninezerofour.com"),
+  metadataBase: new URL("https://www.ninezerofourbeautybar.com"),
   title: {
     default: `${site.name} ${site.tagline} — Hair Restoration, Colour & Extensions`,
     template: `%s — ${site.name} ${site.tagline}`,

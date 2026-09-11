@@ -1,3 +1,5 @@
+import { site } from "@/content/site";
+
 export type TeamMember = {
   slug: string;
   name: string;
@@ -25,7 +27,7 @@ export const team: TeamMember[] = [
     media: "Amanda, founder and restoration lead",
     image: "/team4amanda.webp",
     imagePosition: "52% 18%",
-    bookUrl: "/book?with=amanda",
+    bookUrl: site.bookUrl,
     focus: ["Scalp & density assessment", "Restoration programmes", "Integration systems"],
   },
   {
@@ -37,7 +39,7 @@ export const team: TeamMember[] = [
     media: "Kayla, senior colourist",
     image: "/team5kayla.webp",
     imagePosition: "50% 18%",
-    bookUrl: "/book?with=kayla",
+    bookUrl: site.bookUrl,
     focus: ["Dimensional blonding", "Colour correction", "Lived-in colour"],
   },
   {
@@ -49,7 +51,7 @@ export const team: TeamMember[] = [
     media: "ILE, permanent makeup and brow artist",
     // team6Ile.webp is a landscape marketing banner — needs a real portrait.
     imagePosition: "50% 30%",
-    bookUrl: "/book?with=ile",
+    bookUrl: site.bookUrl,
     focus: ["Hairstroke brows", "Soft liner", "Lip blush"],
   },
   {
@@ -61,7 +63,7 @@ export const team: TeamMember[] = [
     media: "Kaydee, extension specialist",
     image: "/team7Kaydee.webp",
     imagePosition: "20% 18%",
-    bookUrl: "/book?with=kaydee",
+    bookUrl: site.bookUrl,
     focus: ["Hand-tied wefts", "I-tip / individual", "Maintenance & blending"],
   },
   {
@@ -73,7 +75,7 @@ export const team: TeamMember[] = [
     media: "Renata, stylist and treatment therapist",
     image: "/team8unnamedavatar.webp",
     imagePosition: "44% 10%",
-    bookUrl: "/book?with=renata",
+    bookUrl: site.bookUrl,
     focus: ["Precision & dry cutting", "Scalp therapy", "Bond repair"],
   },
   {

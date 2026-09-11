@@ -15,7 +15,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What's the best way to reach the studio?",
-    a: "Call or text (904) 252-5345 during studio hours, or email hello@ninezerofour.com. Text is fastest for scheduling changes.",
+    a: "Call or text (904) 252-5345 during studio hours, or email ninezerofourpvb@gmail.com. Text is fastest for scheduling changes.",
   },
   {
     q: "Why is pricing shown as 'from'?",
