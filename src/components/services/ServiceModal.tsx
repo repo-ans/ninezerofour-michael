@@ -112,6 +112,11 @@ export function ServiceModal({
                 : `From $${service.priceFrom}`}{" "}
               &middot; {service.duration}
             </p>
+            {service.stylist ? (
+              <p className="mt-1 text-xs font-medium tracking-wide text-accent uppercase">
+                {service.stylist}
+              </p>
+            ) : null}
 
             <p className="mt-5 leading-relaxed">{service.description}</p>
 

@@ -50,10 +50,15 @@ export function ServiceCard({
       <p className="mt-1.5 text-sm text-ink-soft">
         {service.duration} &middot; {service.summary}
       </p>
+      {service.stylist ? (
+        <p className="mt-1.5 text-xs font-medium tracking-wide text-accent uppercase">
+          {service.stylist}
+        </p>
+      ) : null}
 
       <div
         className={[
-          "mt-4 flex flex-wrap gap-2 transition-[opacity,transform] duration-200 motion-reduce:transition-none",
+          "mt-4 flex flex-wrap gap-2 transition-[opacity,translate] duration-200 ease-out motion-reduce:transition-none",
           // hover-capable pointers: hidden until the card is hovered / focused
           "[@media(hover:hover)]:translate-y-1 [@media(hover:hover)]:opacity-0",
           "[@media(hover:hover)]:group-hover:translate-y-0 [@media(hover:hover)]:group-hover:opacity-100",

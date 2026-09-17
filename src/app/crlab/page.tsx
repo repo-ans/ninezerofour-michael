@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "The CRLAB Protocol",
   description:
-    "One integrated journey for every hair and scalp concern — consultation, trichology, CNC hair systems, regenerative medicine, hair transplant, and Hair SPA. Nine Zero Four in partnership with CRLAB.",
+    "One integrated journey for every hair and scalp concern — consultation, trichology, mesh, meshless & CNC hair systems, regenerative medicine, hair transplant, and Hair SPA. Nine Zero Four in partnership with CRLAB.",
 };
 
 /* CRLAB co-brand tint, scoped to this page only. */

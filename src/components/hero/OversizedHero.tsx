@@ -88,7 +88,7 @@ export function OversizedHero({
           stagger={0.028}
           delay={0.15}
           className={cn(
-            "display-xl px-(--gutter) whitespace-nowrap text-paper",
+            "display-xl px-(--gutter) whitespace-normal text-paper md:whitespace-nowrap",
             align === "right" ? "text-right" : "-ml-[0.04em]",
           )}
         >

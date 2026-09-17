@@ -33,7 +33,10 @@ export function TileTrio() {
       <Reveal group className="grid gap-8 md:grid-cols-3 md:gap-6">
         {tiles.map((tile) => (
           <RevealItem key={tile.label} as="div">
-            <Link href={tile.href} className="group block">
+            <Link
+              href={tile.href}
+              className="group block transition-transform duration-300 ease-out hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            >
               <Media
                 label={tile.media}
                 src={tile.image}

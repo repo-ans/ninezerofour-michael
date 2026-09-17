@@ -30,6 +30,10 @@ const pillars = [
     title: "A calmer floor",
     body: "Consultation-led bookings and realistic column pacing. Space to do careful work and actually learn.",
   },
+  {
+    title: "Specialty education",
+    body: "Hands-on training in mesh and meshless hair-loss systems and K-tip extensions, taught in-studio by our specialist — skills that meaningfully raise your ceiling as the industry moves this way.",
+  },
 ];
 
 export default function JoinUsPage() {

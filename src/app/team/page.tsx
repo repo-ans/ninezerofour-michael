@@ -70,7 +70,7 @@ export default function TeamPage() {
           <Reveal group className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m) => (
               <RevealItem key={m.slug} as="div">
-                <article className="group flex flex-col">
+                <article className="group flex flex-col transition-transform duration-300 ease-out hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
                   <Media
                     label={m.media}
                     src={m.image}

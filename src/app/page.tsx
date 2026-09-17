@@ -15,7 +15,7 @@ export default function HomePage() {
         hero={
           <OversizedHero
             eyebrow="Nine Zero Four Beauty Bar"
-            intro="Advanced hair restoration, dimensional colour, and natural extensions — delivered with clinical precision in Ponte Vedra Beach."
+            intro="Advanced hair restoration — mesh and meshless hair-loss solutions, dimensional colour, and natural extensions — delivered with clinical precision in Ponte Vedra Beach."
             cta={{ label: "Book a consultation", href: site.bookUrl }}
             headline="HAIR, STUDIED."
             mediaLabel="A stylist finishing a blow-dry at the chair"

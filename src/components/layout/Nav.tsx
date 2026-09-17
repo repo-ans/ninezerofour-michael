@@ -58,7 +58,7 @@ export function Nav() {
         <nav className="mx-auto flex h-(--nav-h) max-w-(--container) items-center justify-between px-(--gutter)">
           <Link
             href="/"
-            className="relative z-10 font-display text-lg tracking-[0.02em] whitespace-nowrap"
+            className="relative z-10 shrink-0 font-display text-base tracking-[0.02em] whitespace-nowrap sm:text-lg"
             aria-label={`${site.name} — home`}
           >
             {site.wordmark}
@@ -71,26 +71,34 @@ export function Nav() {
                   ? pathname === "/"
                   : pathname.startsWith(item.href);
               return (
-                <li key={item.href}>
+                <li key={item.href} className="group">
                   <Link
                     href={item.href}
                     className={cn(
-                      "text-sm tracking-wide transition-opacity hover:opacity-100",
+                      "relative pb-1 text-sm tracking-wide transition-opacity hover:opacity-100",
                       active ? "opacity-100" : "opacity-65",
                     )}
                   >
                     {item.label}
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100 motion-reduce:transition-none",
+                        active && "scale-x-100",
+                      )}
+                    />
                   </Link>
                 </li>
               );
             })}
           </ul>
 
-          <div className="relative z-10 flex items-center gap-3">
+          <div className="relative z-10 flex shrink-0 items-center gap-2 sm:gap-3">
             <ButtonLink
               href={site.bookUrl}
               size="sm"
               variant={solid ? "solid" : "inverse"}
+              className="shrink-0 whitespace-nowrap"
             >
               Book Now
             </ButtonLink>
@@ -100,7 +108,7 @@ export function Nav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center lg:hidden"
+              className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10 lg:hidden"
             >
               <span className="sr-only">Menu</span>
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden>

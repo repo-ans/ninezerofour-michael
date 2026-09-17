@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
+import { CountUp } from "@/components/motion/CountUp";
 import { ButtonLink } from "@/components/ui/Button";
 
 const stats = [
@@ -59,7 +60,7 @@ export function Intro() {
         {stats.map((s) => (
           <RevealItem key={s.label} className="flex flex-col gap-1">
             <span className="font-display text-3xl tracking-tight md:text-4xl">
-              {s.value}
+              <CountUp value={s.value} />
             </span>
             <span className="text-sm text-ink-soft">{s.label}</span>
           </RevealItem>

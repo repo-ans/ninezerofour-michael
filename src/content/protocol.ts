@@ -38,7 +38,7 @@ export const pillars: Pillar[] = [
     summary:
       "Where density needs to be rebuilt, the most advanced restoration solutions are on the same roof.",
     items: [
-      "CNC hair prosthetic system",
+      "Mesh & meshless prosthetic systems (CNC)",
       "Regenerative medicine",
       "Hair transplantation",
     ],
@@ -69,8 +69,8 @@ export const journey: JourneyStage[] = [
   },
   {
     step: "04",
-    name: "CNC hair prosthetic system",
-    copy: "A breathable, custom-built second skin of hair for areas where density cannot be regrown — fitted, cut, and blended so the transition is invisible.",
+    name: "Mesh, meshless & CNC prosthetic systems",
+    copy: "A breathable, custom-built second skin of hair — through mesh, meshless, or CNC systems — for areas where density cannot be regrown, fitted, cut, and blended so the transition is invisible.",
   },
   {
     step: "05",

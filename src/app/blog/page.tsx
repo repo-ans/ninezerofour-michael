@@ -35,7 +35,10 @@ export default function BlogPage() {
         <Reveal group className="grid gap-x-8 gap-y-14 md:grid-cols-2">
           {posts.map((post) => (
             <RevealItem key={post.slug} as="div">
-              <Link href={`/blog/${post.slug}`} className="group block">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group block transition-transform duration-300 ease-out hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              >
                 <Media
                   label={post.media}
                   src={post.image}

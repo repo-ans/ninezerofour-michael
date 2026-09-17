@@ -42,7 +42,7 @@ export function BookingForm({
         setSent(true);
       }}
     >
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid min-w-0 gap-5 sm:grid-cols-2">
         <Field label="First name" name="firstName" required />
         <Field label="Last name" name="lastName" required />
         <Field label="Email" name="email" type="email" required />
@@ -114,7 +114,7 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <label className="flex flex-col gap-2 text-sm">
+    <label className="flex min-w-0 flex-col gap-2 text-sm">
       <span className="font-medium">
         {label}
         {required ? <span className="text-accent"> *</span> : null}
@@ -123,7 +123,7 @@ function Field({
         type={type}
         name={name}
         required={required}
-        className="h-11 rounded-sm border border-line bg-paper px-3 text-[0.95rem] focus:border-ink focus:outline-none"
+        className="h-11 w-full min-w-0 rounded-sm border border-line bg-paper px-3 text-[0.95rem] focus:border-ink focus:outline-none"
       />
     </label>
   );
@@ -141,12 +141,12 @@ function SelectField({
   defaultValue?: string;
 }) {
   return (
-    <label className="flex flex-col gap-2 text-sm">
+    <label className="flex min-w-0 flex-col gap-2 text-sm">
       <span className="font-medium">{label}</span>
       <select
         name={name}
         defaultValue={defaultValue}
-        className="h-11 rounded-sm border border-line bg-paper px-3 text-[0.95rem] focus:border-ink focus:outline-none"
+        className="h-11 w-full min-w-0 rounded-sm border border-line bg-paper px-3 text-[0.95rem] focus:border-ink focus:outline-none"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>

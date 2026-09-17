@@ -23,6 +23,8 @@ export function Media({
   priority,
   sizes = "(min-width: 768px) 50vw, 100vw",
   objectPosition,
+  /** Subtle zoom on hover — activates when a `.group` ancestor is hovered. */
+  zoom = true,
 }: {
   label: string;
   src?: string;
@@ -32,6 +34,7 @@ export function Media({
   priority?: boolean;
   sizes?: string;
   objectPosition?: string;
+  zoom?: boolean;
 }) {
   const aspectRatio = ratio === "auto" ? undefined : ratio;
 
@@ -47,7 +50,11 @@ export function Media({
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover"
+          className={cn(
+            "object-cover",
+            zoom &&
+              "transition-transform duration-900 ease-out will-change-transform group-hover:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover:scale-100",
+          )}
           style={objectPosition ? { objectPosition } : undefined}
         />
       </div>

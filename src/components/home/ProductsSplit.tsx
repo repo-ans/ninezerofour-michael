@@ -40,14 +40,13 @@ export function ProductsSplit() {
             repair, and colour-safe daily products — and we only recommend what
             your assessment actually calls for.
           </RevealItem>
-          <RevealItem
-            as="ul"
-            className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-inverse-ink/60"
-          >
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-inverse-ink/60">
             {brands.map((b) => (
-              <li key={b}>{b}</li>
+              <RevealItem key={b} as="li">
+                {b}
+              </RevealItem>
             ))}
-          </RevealItem>
+          </ul>
         </Reveal>
       </div>
     </section>

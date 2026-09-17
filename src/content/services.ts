@@ -21,6 +21,8 @@ export type Service = {
   description: string;
   /** Bulleted "what's included" points for the modal. */
   includes: string[];
+  /** Shown when a service is a specialty offered by a subset of the team. */
+  stylist?: string;
 };
 
 export const serviceCategories: ServiceCategory[] = [
@@ -40,6 +42,14 @@ export const serviceCategories: ServiceCategory[] = [
     image: "/services4.webp",
   },
   {
+    id: "hairloss",
+    label: "Mesh & Meshless Solutions",
+    blurb:
+      "Custom hair-replacement systems and ongoing maintenance for fine, thin, and thinning hair — a dedicated specialty at the studio.",
+    media: "Mesh and meshless integration",
+    image: "/services5.webp",
+  },
+  {
     id: "color",
     label: "Colour",
     blurb: "Dimensional blonding and lived-in colour, mapped to your hair's history.",
@@ -49,7 +59,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "extensions",
     label: "Extensions",
-    blurb: "Hand-tied and individual methods for seamless length and fullness.",
+    blurb: "Hand-tied, individual, and K-tip methods for seamless length and fullness.",
     media: "The extension bar",
     image: "/services1.webp",
   },
@@ -103,21 +113,57 @@ export const services: Service[] = [
       "Progress imaging and plan adjustment every 4th visit",
     ],
   },
+
+  // Mesh & Meshless Solutions
   {
-    slug: "topper-integration",
-    name: "Topper & Integration Fitting",
-    category: "restoration",
-    priceFrom: 350,
-    duration: "2 hr",
-    summary: "Custom-matched hair systems, cut and blended in-studio.",
+    slug: "mesh-integration",
+    name: "Mesh Integration System",
+    category: "hairloss",
+    priceFrom: 380,
+    duration: "2 – 3 hr",
+    summary: "A custom-matched mesh base, fitted and blended for natural density.",
     description:
-      "For areas where density cannot be regrown, we fit and customise premium toppers and integration pieces — matched to your colour and pattern, then cut and styled so the transition is invisible. Includes a fitting, customisation, and a styling lesson.",
+      "A breathable, mesh-based integration system built to your colour, density, and pattern — fitted, cut, and blended by our hair-loss specialist so the transition is invisible. Includes fitting, customisation, and a home-care lesson.",
     includes: [
-      "Colour and pattern matching",
-      "Base sizing and attachment method selection",
+      "Colour and density matching",
+      "Custom mesh base fitting",
       "In-studio cut-in and blend",
-      "Maintenance and re-application coaching",
+      "Home-care and styling lesson",
     ],
+    stylist: "With select stylists",
+  },
+  {
+    slug: "meshless-integration",
+    name: "Meshless Integration System",
+    category: "hairloss",
+    priceFrom: 380,
+    duration: "2 – 3 hr",
+    summary: "A mesh-free alternative for sensitive scalps, fitted and blended in-studio.",
+    description:
+      "For clients who prefer a mesh-free base, this integration method attaches without a mesh foundation — a gentler option for sensitive scalps, matched and blended by our hair-loss specialist for an undetectable result.",
+    includes: [
+      "Colour and density matching",
+      "Mesh-free base fitting",
+      "In-studio cut-in and blend",
+      "Home-care and styling lesson",
+    ],
+    stylist: "With select stylists",
+  },
+  {
+    slug: "integration-maintenance",
+    name: "Integration Maintenance & Move-Up",
+    category: "hairloss",
+    priceFrom: 150,
+    duration: "60 – 90 min",
+    summary: "Recurring upkeep to keep mesh and meshless systems secure and comfortable.",
+    description:
+      "Scheduled maintenance for mesh and meshless integration systems — cleaning, re-securing, and a comfort check to keep your system looking natural between full replacements.",
+    includes: [
+      "System clean and inspection",
+      "Re-securing and adjustment",
+      "Scalp comfort check",
+    ],
+    stylist: "With select stylists",
   },
 
   // Colour
@@ -190,6 +236,18 @@ export const services: Service[] = [
     description:
       "Discreet single-strand bonds suited to finer hair or targeted fullness. Installation price shown; hair quoted after consultation.",
     includes: ["Strand placement", "Colour blend and cut", "Move-up scheduling"],
+  },
+  {
+    slug: "k-tip-extensions",
+    name: "K-Tip Extensions",
+    category: "extensions",
+    priceFrom: 375,
+    duration: "2 – 4 hr + hair",
+    summary: "Keratin-tip strands fused for a seamless, long-wearing result.",
+    description:
+      "Keratin-tip (K-tip) strands fused strand-by-strand with heat for a long-wearing, virtually undetectable finish — a specialty method offered by select stylists. Installation price shown; hair quoted after consultation.",
+    includes: ["Strand placement", "Colour blend and cut", "Move-up scheduling"],
+    stylist: "With select stylists",
   },
   {
     slug: "extension-maintenance",

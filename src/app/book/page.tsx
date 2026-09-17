@@ -57,8 +57,8 @@ export default async function BookPage({ searchParams }: PageProps<"/book">) {
       ) : null}
 
       <Container className="py-16 md:py-24">
-        <div className="grid gap-12 md:grid-cols-[1.3fr_0.7fr] md:gap-16">
-          <Reveal className="flex flex-col gap-4">
+        <div className="grid min-w-0 gap-12 md:grid-cols-[1.3fr_0.7fr] md:gap-16">
+          <Reveal className="min-w-0 flex flex-col gap-4">
             {!isCareers ? (
               <p className="eyebrow">Send a message</p>
             ) : null}
@@ -69,7 +69,7 @@ export default async function BookPage({ searchParams }: PageProps<"/book">) {
             />
           </Reveal>
 
-          <Reveal group className="flex flex-col gap-8">
+          <Reveal group className="min-w-0 flex flex-col gap-8">
             <div>
               <p className="eyebrow">Studio</p>
               <address className="mt-3 space-y-1 text-sm text-ink-soft not-italic">
