@@ -59,7 +59,7 @@ export function Intro() {
       >
         {stats.map((s) => (
           <RevealItem key={s.label} className="flex flex-col gap-1">
-            <span className="font-display text-3xl tracking-tight md:text-4xl">
+            <span className="font-display text-4xl tracking-tight md:text-5xl">
               <CountUp value={s.value} />
             </span>
             <span className="text-sm text-ink-soft">{s.label}</span>

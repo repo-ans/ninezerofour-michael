@@ -19,7 +19,7 @@ export function ScrollProgressBar() {
   return (
     <motion.div
       aria-hidden
-      className="fixed inset-x-0 top-0 z-55 h-[2.5px] origin-left bg-accent motion-reduce:hidden"
+      className="fixed inset-x-0 top-0 z-55 h-[2.5px] origin-left bg-taupe motion-reduce:hidden"
       style={{ scaleX }}
     />
   );

@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 
 /* CRLAB co-brand tint, scoped to this page only. */
 const coBrand = {
-  "--accent": "#5b4635",
-  "--accent-ink": "#f4efe8",
-  "--accent-soft": "#ece4d9",
-  "--inverse": "#3a2d22",
-  "--inverse-ink": "#efe7dc",
-  "--inverse-line": "#54463a",
+  "--accent": "#6c635d",
+  "--accent-ink": "#f7f4ef",
+  "--accent-soft": "#e9dfd5",
+  "--inverse": "#544c46",
+  "--inverse-ink": "#f7f4ef",
+  "--inverse-line": "#6d635b",
 } as CSSProperties;
 
 const bookHref = "#crlab-contact";
@@ -45,8 +45,9 @@ export default function HairRestorationPage() {
           intro={protocol.heroIntro}
           cta={{ label: "Book a consultation", href: bookHref }}
           headline={protocol.heroHeadline}
-          mediaLabel="A scalp and density assessment in progress"
-          mediaSrc="/services4.webp"
+          mediaLabel="A stylist working with a client at the chair"
+          mediaSrc="/work-blowdry.webp"
+          mediaPosition="50% 35%"
         />
       </section>
 
@@ -175,7 +176,7 @@ export default function HairRestorationPage() {
             <Reveal>
               <Media
                 label="The Hair SPA at Nine Zero Four"
-                src="/services3.webp"
+                src="/studio-floor.webp"
                 ratio="4 / 5"
                 className="rounded-md"
               />
@@ -270,9 +271,9 @@ export default function HairRestorationPage() {
             </Reveal>
             <Reveal className="order-1 md:order-2">
               <Media
-                label="A take-home protocol of products and supplements"
-                src="/team2virtue.webp"
-                ratio="5 / 4"
+                label="The scalp-care wall, where take-home protocols begin"
+                src="/studio-scalp-wall.webp"
+                ratio="4 / 5"
                 className="rounded-md"
               />
             </Reveal>
@@ -311,7 +312,7 @@ export default function HairRestorationPage() {
               <ButtonLink href={bookHref} variant="inverse">
                 Request a consultation
               </ButtonLink>
-              <span className="font-display text-lg text-inverse-ink/55 italic">
+              <span className="font-script text-4xl leading-none text-inverse-ink/80">
                 {closing.cta.signoff}
               </span>
             </RevealItem>

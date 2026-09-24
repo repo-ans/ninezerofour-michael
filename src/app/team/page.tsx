@@ -79,7 +79,13 @@ export default function TeamPage() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="rounded-md transition-[filter] duration-300 group-hover:brightness-[0.97]"
                   />
-                  <h3 className="mt-5 font-display text-xl tracking-tight">
+                  <h3
+                    className={
+                      m.slug === "new-chair"
+                        ? "mt-4 mb-1 font-script text-[2.6rem] leading-[1.3] tracking-normal [font-size-adjust:none]"
+                        : "mt-5 font-display text-2xl tracking-tight"
+                    }
+                  >
                     {m.name}
                   </h3>
                   <p className="text-sm text-accent">{m.role}</p>

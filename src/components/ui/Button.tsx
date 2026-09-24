@@ -12,11 +12,17 @@ type Variant = "solid" | "outline" | "ghost" | "inverse";
 type Size = "sm" | "md";
 
 const base =
-  "group relative isolate inline-flex items-center justify-center gap-2 overflow-hidden rounded-sm font-medium tracking-tight transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "group relative isolate inline-flex items-center justify-center gap-2 overflow-hidden font-medium tracking-[0.16em] whitespace-nowrap uppercase transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
 const sizes: Record<Size, string> = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-12 px-6 text-[0.95rem]",
+  sm: "h-9 px-5 text-[0.68rem]",
+  md: "h-12 px-8 text-[0.72rem]",
+};
+
+type Shape = "soft" | "pill";
+const shapes: Record<Shape, string> = {
+  soft: "rounded-sm",
+  pill: "rounded-full",
 };
 
 const variants: Record<Variant, string> = {
@@ -41,12 +47,12 @@ function useHoverMotion() {
     whileHover: {
       y: reduce ? 0 : -3,
       scale: reduce ? 1 : 1.02,
-      boxShadow: "0 16px 32px -14px rgba(0,0,0,0.4)",
+      boxShadow: "0 16px 32px -14px rgba(58,56,56,0.42)",
     },
     whileTap: {
       y: 0,
       scale: reduce ? 1 : 0.965,
-      boxShadow: "0 4px 10px -6px rgba(0,0,0,0.3)",
+      boxShadow: "0 4px 10px -6px rgba(58,56,56,0.32)",
     },
     transition: lift,
   };
@@ -73,6 +79,7 @@ function Label({ children }: { children: ReactNode }) {
 type CommonProps = {
   variant?: Variant;
   size?: Size;
+  shape?: Shape;
   className?: string;
   children: ReactNode;
 };
@@ -80,6 +87,7 @@ type CommonProps = {
 export function Button({
   variant = "solid",
   size = "md",
+  shape = "soft",
   className,
   children,
   type = "button",
@@ -96,7 +104,7 @@ export function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={cn(base, sizes[size], variants[variant], className)}
+      className={cn(base, sizes[size], shapes[shape], variants[variant], className)}
       {...hoverMotion}
     >
       <Sheen />
@@ -108,6 +116,7 @@ export function Button({
 export function ButtonLink({
   variant = "solid",
   size = "md",
+  shape = "soft",
   className,
   children,
   href,
@@ -116,7 +125,7 @@ export function ButtonLink({
   href: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
 }) {
-  const classes = cn(base, sizes[size], variants[variant], className);
+  const classes = cn(base, sizes[size], shapes[shape], variants[variant], className);
   const hoverMotion = useHoverMotion();
 
   if (isExternal(href)) {

@@ -64,7 +64,7 @@ export function StickyPanelSection({
         style={{ y, marginTop: "-100svh" }}
         className={cn(
           "relative z-10 min-h-svh bg-panel will-change-transform",
-          "shadow-[0_-40px_80px_-40px_rgba(0,0,0,0.28)]",
+          "shadow-[0_-40px_80px_-40px_rgba(58,56,56,0.28)]",
           panelClassName,
         )}
       >

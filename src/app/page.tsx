@@ -4,6 +4,8 @@ import { Intro } from "@/components/home/Intro";
 import { StylistMatch } from "@/components/home/StylistMatch";
 import { TileTrio } from "@/components/home/TileTrio";
 import { ProductsSplit } from "@/components/home/ProductsSplit";
+import { BeforeAfter } from "@/components/home/BeforeAfter";
+import { Reviews } from "@/components/home/Reviews";
 import { PricingAccordion } from "@/components/home/PricingAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { site } from "@/content/site";
@@ -18,8 +20,9 @@ export default function HomePage() {
             intro="Advanced hair restoration — mesh and meshless hair-loss solutions, dimensional colour, and natural extensions — delivered with clinical precision in Ponte Vedra Beach."
             cta={{ label: "Book a consultation", href: site.bookUrl }}
             headline="HAIR, STUDIED."
-            mediaLabel="A stylist finishing a blow-dry at the chair"
-            mediaSrc="/join3.webp"
+            mediaLabel="Soft, dimensional blonde waves finished at the chair"
+            mediaSrc="/work-blonde-profile.webp"
+            mediaPosition="50% 30%"
           />
         }
       >
@@ -28,8 +31,10 @@ export default function HomePage() {
 
       <StylistMatch />
       <TileTrio />
+      <BeforeAfter />
       <ProductsSplit />
       <PricingAccordion />
+      <Reviews />
       <CtaBand
         secondaryLabel="View all services"
         secondaryHref="/services"

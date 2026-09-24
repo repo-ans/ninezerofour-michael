@@ -58,10 +58,15 @@ export function Nav() {
         <nav className="mx-auto flex h-(--nav-h) max-w-(--container) items-center justify-between px-(--gutter)">
           <Link
             href="/"
-            className="relative z-10 shrink-0 font-display text-base tracking-[0.02em] whitespace-nowrap sm:text-lg"
+            className="relative z-10 flex shrink-0 flex-col items-center leading-none whitespace-nowrap"
             aria-label={`${site.name} — home`}
           >
-            {site.wordmark}
+            <span className="font-display text-[0.82rem] font-medium tracking-[0.1em] sm:text-lg sm:tracking-[0.14em]">
+              {site.wordmark}
+            </span>
+            <span className="mt-1 pl-[0.5em] text-[0.4rem] font-medium tracking-[0.5em] sm:text-[0.48rem]">
+              {site.tagline.toUpperCase()}
+            </span>
           </Link>
 
           <ul className="hidden items-center gap-8 lg:flex">
@@ -75,7 +80,7 @@ export function Nav() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "relative pb-1 text-sm tracking-wide transition-opacity hover:opacity-100",
+                      "relative pb-1 text-[0.68rem] font-medium tracking-[0.2em] uppercase transition-opacity hover:opacity-100",
                       active ? "opacity-100" : "opacity-65",
                     )}
                   >
@@ -97,8 +102,9 @@ export function Nav() {
             <ButtonLink
               href={site.bookUrl}
               size="sm"
+              shape="pill"
               variant={solid ? "solid" : "inverse"}
-              className="shrink-0 whitespace-nowrap"
+              className="shrink-0 max-[359px]:hidden"
             >
               Book Now
             </ButtonLink>

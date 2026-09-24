@@ -11,9 +11,10 @@ export function StylistMatch() {
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal className="order-2 md:order-1">
             <Media
-              label="A colourist mixing at the station"
-              src="/services2.webp"
-              ratio="5 / 4"
+              label="The consultation table at Nine Zero Four"
+              src="/studio-consultation.webp"
+              ratio="4 / 5"
+              objectPosition="50% 60%"
               tone="sand"
               className="rounded-md"
             />

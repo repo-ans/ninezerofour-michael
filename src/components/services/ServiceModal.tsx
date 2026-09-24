@@ -138,14 +138,14 @@ export function ServiceModal({
                 href={site.bookUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-11 flex-1 items-center justify-center rounded-sm bg-ink px-6 text-sm font-medium text-paper transition-colors hover:bg-accent"
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-sm bg-ink px-6 text-[0.68rem] font-medium tracking-[0.16em] uppercase text-paper transition-colors hover:bg-accent"
               >
                 Book this service
               </a>
               <Link
                 href="/book"
                 onClick={onClose}
-                className="inline-flex h-11 items-center justify-center rounded-sm border border-ink/25 px-6 text-sm font-medium transition-colors hover:border-ink"
+                className="inline-flex h-11 items-center justify-center rounded-sm border border-ink/25 px-6 text-[0.68rem] font-medium tracking-[0.16em] uppercase transition-colors hover:border-ink"
               >
                 Ask a question
               </Link>

@@ -12,7 +12,7 @@ export const navItems: NavItem[] = [
 
 export const site = {
   name: "Nine Zero Four",
-  wordmark: "NINEZEROFOUR",
+  wordmark: "NINE ZERO FOUR",
   tagline: "Beauty Bar",
   /** Short positioning line — clinical / credential-forward register. */
   descriptor:
@@ -36,9 +36,9 @@ export const site = {
   /** Studio contacts (internal reference). */
   contacts: ["Amanda Lawler", "Renee Weyeneth"],
   social: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Facebook", href: "https://facebook.com" },
-    { label: "TikTok", href: "https://tiktok.com" },
+    { label: "Instagram", href: "https://www.instagram.com/ninezerofour.beautybar" },
+    { label: "Facebook", href: "https://www.facebook.com/share/1DWK3HrQaE/" },
+    { label: "TikTok", href: "https://www.tiktok.com/@ninezerofourbeautybar" },
   ],
   /** Booking / cancellation policy shown in the footer. */
   policy:

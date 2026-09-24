@@ -2,28 +2,37 @@
 
 /* =========================================================================
    NINE ZERO FOUR — design tokens
-   Re-skin surface: edit the values in :root below when the client's
-   inspiration / brand assets land. Everything else reads from these.
+   Client brand system (from "Color / font inspo"):
+     Ivory #F7F4EF · Sand #DCCBBD · Taupe #A88F7B · Mocha #8D8076 · Charcoal #3A3838
+     Cormorant Garamond (headlines) · Montserrat (subheads + body) · script accent
+   Re-skin surface: edit the values in :root below. Everything else reads them.
    ========================================================================= */
 
 :root {
-  /* Surfaces */
-  --paper: #f5f4f0; /* page background — warm off-white */
-  --panel: #ffffff; /* raised panels, the scroll-reveal card */
-  --panel-2: #ecebe4; /* secondary panel / hover wells */
-  --ink: #17160f; /* primary text — warm near-black */
-  --ink-soft: #57544a; /* secondary text */
-  --line: #ded9cd; /* hairlines, borders */
+  /* Brand palette */
+  --ivory: #f7f4ef;
+  --sand: #dccbbd;
+  --taupe: #a88f7b;
+  --mocha: #8d8076;
+  --charcoal: #3a3838;
 
-  /* Brand accent — one restrained clinical tone */
-  --accent: #33443f; /* deep eucalyptus slate */
-  --accent-ink: #f5f4f0; /* text on accent */
-  --accent-soft: #e6e9e5; /* accent tint wells */
+  /* Surfaces */
+  --paper: var(--ivory); /* page background */
+  --panel: #fcfaf7; /* raised panels, the scroll-reveal card (lighter ivory) */
+  --panel-2: #eee6dd; /* secondary panel / hover wells (sand tint) */
+  --ink: var(--charcoal); /* primary text */
+  --ink-soft: #5c5652; /* secondary text — charcoal/mocha blend, AA on ivory */
+  --line: #e2d6cb; /* hairlines, borders (sand tint) */
+
+  /* Brand accent — deepened mocha (AA for small text on ivory) */
+  --accent: #6c635d;
+  --accent-ink: var(--ivory); /* text on accent */
+  --accent-soft: #e9dfd5; /* accent tint wells */
 
   /* Inverse (dark CTA / footer) */
-  --inverse: #17160f;
-  --inverse-ink: #f0efe8;
-  --inverse-line: #3a3830;
+  --inverse: var(--charcoal);
+  --inverse-ink: var(--ivory);
+  --inverse-line: #57524f;
 
   --radius: 3px;
   --radius-lg: 6px;
@@ -35,6 +44,12 @@
 }
 
 @theme inline {
+  --color-ivory: var(--ivory);
+  --color-sand: var(--sand);
+  --color-taupe: var(--taupe);
+  --color-mocha: var(--mocha);
+  --color-charcoal: var(--charcoal);
+
   --color-paper: var(--paper);
   --color-panel: var(--panel);
   --color-panel-2: var(--panel-2);
@@ -48,8 +63,9 @@
   --color-inverse-ink: var(--inverse-ink);
   --color-inverse-line: var(--inverse-line);
 
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-montserrat), Montserrat, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-mrs-saint), "Mrs Saint Delafield", cursive;
 
   --radius-xs: 2px;
   --radius-sm: var(--radius);
@@ -72,8 +88,9 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: 0.9875rem;
+    line-height: 1.75;
+    letter-spacing: 0.005em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -83,10 +100,14 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.005em;
+    font-variant-numeric: lining-nums;
     text-wrap: balance;
+    /* Cormorant has a small x-height; scale it toward parity with the
+       headline size the layout was tuned for. Display classes opt out. */
+    font-size-adjust: 0.45;
   }
 
   ::selection {
@@ -131,7 +152,7 @@
     font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink-soft);
   }
@@ -139,27 +160,33 @@
   /* Oversized display headline — the hero + section statements.
      Uses clamp so it scales fluidly and can bleed off the viewport. */
   .display-xl {
+    font-size-adjust: none;
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(3.25rem, 13vw, 12rem);
-    line-height: 0.92;
-    letter-spacing: -0.035em;
+    font-weight: 500;
+    font-size: clamp(3.25rem, 12vw, 11.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    font-variant-numeric: lining-nums;
   }
 
   .display-lg {
+    font-size-adjust: none;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6.8vw, 5.25rem);
     line-height: 1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.012em;
+    font-variant-numeric: lining-nums;
   }
 
   .display-md {
+    font-size-adjust: none;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
     line-height: 1.05;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.008em;
+    font-variant-numeric: lining-nums;
   }
 }
 

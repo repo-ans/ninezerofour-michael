@@ -39,7 +39,7 @@ export function ServiceCard({
       }}
       whileHover={reduce ? undefined : { y: -3 }}
       transition={{ duration: 0.2, ease }}
-      className="group flex h-full cursor-pointer flex-col rounded-sm border border-line bg-panel p-6 transition-shadow duration-200 hover:shadow-[0_20px_44px_-26px_rgba(0,0,0,0.4)]"
+      className="group flex h-full cursor-pointer flex-col rounded-sm border border-line bg-panel p-6 transition-shadow duration-200 hover:shadow-[0_20px_44px_-26px_rgba(58,56,56,0.4)]"
     >
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="font-display text-xl tracking-tight">{service.name}</h3>
@@ -72,7 +72,7 @@ export function ServiceCard({
             e.stopPropagation();
             window.open(site.bookUrl, "_blank", "noopener,noreferrer");
           }}
-          className="h-9 rounded-sm bg-ink px-4 text-sm font-medium text-paper transition-colors hover:bg-accent"
+          className="h-9 rounded-sm bg-ink px-5 text-[0.68rem] font-medium tracking-[0.16em] uppercase text-paper transition-colors hover:bg-accent"
         >
           Book Now
         </button>
@@ -82,7 +82,7 @@ export function ServiceCard({
             e.stopPropagation();
             onOpen(service);
           }}
-          className="h-9 rounded-sm border border-ink/25 px-4 text-sm font-medium transition-colors hover:border-ink"
+          className="h-9 rounded-sm border border-ink/25 px-5 text-[0.68rem] font-medium tracking-[0.16em] uppercase transition-colors hover:border-ink"
         >
           Learn More
         </button>

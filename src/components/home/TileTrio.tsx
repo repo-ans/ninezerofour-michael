@@ -6,22 +6,22 @@ import { Media } from "@/components/ui/Media";
 const tiles = [
   {
     label: "Scalp & Restoration",
-    media: "A stylist assessing and matching hair",
-    image: "/services4.webp",
+    media: "The scalp-care wall at Nine Zero Four",
+    image: "/studio-scalp-wall.webp",
     copy: "Assessment-led programmes for thinning and density — imaged, staged, and reviewed against a baseline.",
     href: "/services",
   },
   {
     label: "Dimensional Colour",
-    media: "Mixing colour at the station",
-    image: "/blog1.webp",
+    media: "Soft dimensional colour",
+    image: "/work-blonde-back.webp",
     copy: "Hand-painted and foiled lightening mapped to your hair's history, worked in stages to protect it.",
     href: "/services",
   },
   {
     label: "Natural Extensions",
-    media: "The extension bar",
-    image: "/services1.webp",
+    media: "A stylist installing tape-in extensions",
+    image: "/work-tape-in.webp",
     copy: "Hand-tied and individual methods, colour-matched and cut so the transition is invisible.",
     href: "/services",
   },

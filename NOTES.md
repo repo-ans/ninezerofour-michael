@@ -30,29 +30,33 @@ npm run build
 
 All respect `prefers-reduced-motion` (via `<MotionConfig reducedMotion="user">` in `layout.tsx` plus explicit gates on the scroll-scrubbed hero).
 
-## Images
+## Brand system & images
 
-- Client photos live in `public/` and are wired through `src/components/ui/Media.tsx`.
-  `Media` renders `next/image` when given `src`, else a labelled placeholder.
-  Assignments: hero + haircuts tab → `join3`; extensions → `services1`; colour →
-  `services2` / `blog1`; restoration → `services4`; products → `services5` /
-  `team2virtue`; team portraits → `team4amanda`/`team5kayla`/`team7Kaydee`/
-  `team8unnamedavatar`; group shots → `team3` / `join1`; scissors → `join2`.
-- **Still needs a real photo:** `ILE` on the Team page — `team6Ile.webp` is a
-  landscape marketing banner, so that card shows the placeholder. Drop a portrait
-  in `public/` and set `image` / `imagePosition` in `src/content/team.ts`.
-- Portrait crops are tuned per-image with `imagePosition` (CSS `object-position`)
-  in the content files — re-check these when photos are replaced.
+- **Palette** (client "Color / font inspo" board) lives in `:root` in `src/app/globals.css`:
+  Ivory `#F7F4EF` (page) · Sand `#DCCBBD` (hairlines / wells, via tints) · Taupe `#A88F7B`
+  (progress bar) · Mocha `#8D8076` (deepened to `#6C635D` for text-safe accent) ·
+  Charcoal `#3A3838` (text + dark bands). `/crlab` uses a deeper-mocha variant of the dark band.
+- **Fonts**: Cormorant Garamond (headlines) · Montserrat (subheads + body) · script accent.
+  The board specifies *Austie Script* (licensed) — **Mrs Saint Delafield** is the free stand-in
+  (used for "Think ahead." and the hiring card). Swap in `src/app/layout.tsx` if the licence is bought.
+- **Images** are served from `public/` as optimised WebPs. Originals (heavy PNGs, the
+  palette board, review screenshots, docx/pdf) are in `source-assets/new-images/`; images that
+  were replaced are in `source-assets/replaced-images/` — neither folder is served.
+  Assignments: hero `work-blonde-profile`; `/crlab` hero `work-blowdry`; tiles
+  `studio-scalp-wall` / `work-blonde-back` / `work-tape-in`; before/after `result-colour`,
+  `result-length`; reviews `review-renee`, `review-amanda` (Google screenshots, cropped);
+  Amanda `team-amanda`; Join Us `stylist-seated` (**confirm who this is — may be Renee's portrait**).
+- **Still needs a real photo:** `ILE` on the Team page (placeholder).
+- Portrait crops are tuned per-image with `imagePosition` (CSS `object-position`) in the content files.
 
 ## Placeholders — swap before launch
 
-- **Brand palette / fonts.** Currently a neutral clinical-editorial system (warm off-white + deep ink + one eucalyptus accent, Fraunces + Inter). Edit `:root` in `globals.css` once inspiration lands.
 - **Contact details** (`src/content/site.ts`) — email, hours, and the Vagaro
   booking link are the client's real values (email `ninezerofourpvb@gmail.com`,
   Vagaro `vagaro.com/ninezerofourbeautybar1`). Address + phone still from the
   current live site — confirm. `site.contacts` holds the studio owner names
-  (internal reference, not shown on the site). Socials still point to bare
-  domains — add the real handles.
+  (internal reference, not shown on the site). Social links are the real
+  Instagram / Facebook / TikTok from the client capture form.
 - **Booking.** "Book Now" everywhere links to **Vagaro** in a new tab
   (`site.bookUrl` → `SmartLink` / `ButtonLink` auto-detect absolute URLs).
   `/book` keeps a "Send a message" form (`BookingForm`) for questions and the

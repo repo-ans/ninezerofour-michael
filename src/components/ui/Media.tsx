@@ -4,9 +4,9 @@ import { cn } from "@/lib/cn";
 type Tone = "sand" | "accent" | "ink";
 
 const tones: Record<Tone, { bg: string; fg: string; line: string }> = {
-  sand: { bg: "#e9e7df", fg: "#57544a", line: "#d4d0c2" },
-  accent: { bg: "#33443f", fg: "#cfd6d1", line: "#3f524c" },
-  ink: { bg: "#1c1b14", fg: "#8f8b7d", line: "#2b2a20" },
+  sand: { bg: "#eee6dd", fg: "#5c5652", line: "#dccbbd" },
+  accent: { bg: "#8d8076", fg: "#f7f4ef", line: "#a08f83" },
+  ink: { bg: "#3a3838", fg: "#a99f96", line: "#4a4746" },
 };
 
 /**

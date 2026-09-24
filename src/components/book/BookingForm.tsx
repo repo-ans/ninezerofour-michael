@@ -91,7 +91,7 @@ export function BookingForm({
 
       <button
         type="submit"
-        className="mt-1 inline-flex h-12 items-center justify-center rounded-sm bg-ink px-6 text-sm font-medium text-paper transition-colors hover:bg-accent"
+        className="mt-1 inline-flex h-12 items-center justify-center rounded-sm bg-ink px-6 text-[0.68rem] font-medium tracking-[0.16em] uppercase text-paper transition-colors hover:bg-accent"
       >
         {isCareers ? "Submit application" : "Request appointment"}
       </button>

@@ -20,8 +20,8 @@ export const posts: BlogPost[] = [
     category: "Restoration",
     excerpt:
       "Density, miniaturisation, inflammation, follicular units per zone — the language behind the images we take at your first visit.",
-    media: "Colour-matching at the station",
-    image: "/services4.webp",
+    media: "A stylist photographing a client's hair for a baseline",
+    image: "/work-photographing.webp",
     body: [
       "Most people arrive at a consultation with one question: is my hair falling out? The honest answer is that everyone sheds — the useful question is whether the hair growing back is as strong as the hair that left, and where that balance is shifting.",
       "Under magnification we can see the width of individual strands within a follicular unit. When thicker terminal hairs are being replaced by finer, shorter ones, that's miniaturisation, and it tends to follow a pattern. Mapping it across defined zones of the scalp gives us a baseline we can measure against three and six months later.",
@@ -37,8 +37,8 @@ export const posts: BlogPost[] = [
     category: "Colour",
     excerpt:
       "Why we lighten in stages, what bond additives really do, and how to tell if your hair can take another session.",
-    media: "Mixing colour at the station",
-    image: "/blog1.webp",
+    media: "Soft dimensional blonde colour",
+    image: "/work-blonde-back.webp",
     body: [
       "The fastest route to bright blonde is almost never the healthiest one. Hair has a finite amount of structural protein, and every lightening service spends some of it. Our job is to spend it slowly.",
       "Working in stages — lifting part of the head, or lifting less per visit — lets us assess how your hair responds before committing further. Bond-protecting additives help, but they're insurance, not permission to over-process.",
@@ -53,8 +53,8 @@ export const posts: BlogPost[] = [
     category: "Extensions",
     excerpt:
       "The home-care habits that decide whether your move-up is comfortable or overdue.",
-    media: "Holding a hand-tied weft",
-    image: "/blog2.webp",
+    media: "An extension bond at the crown",
+    image: "/work-extension-detail.webp",
     body: [
       "Extensions fail early for predictable reasons: sleeping on wet hair, skipping the loop brush, and letting product build up at the foundation.",
       "Dry your roots before bed, brush from the ends up twice a day, and clarify the attachment area weekly. Book your move-up at six to nine weeks — waiting longer puts tension on your own hair.",

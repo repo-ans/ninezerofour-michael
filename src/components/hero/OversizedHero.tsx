@@ -14,6 +14,7 @@ export function OversizedHero({
   headline,
   mediaLabel = "Studio hero",
   mediaSrc,
+  mediaPosition,
   align = "left",
 }: {
   eyebrow?: string;
@@ -23,6 +24,7 @@ export function OversizedHero({
   headline: string;
   mediaLabel?: string;
   mediaSrc?: string;
+  mediaPosition?: string;
   align?: "left" | "right";
 }) {
   return (
@@ -31,6 +33,7 @@ export function OversizedHero({
         <Media
           label={mediaLabel}
           src={mediaSrc}
+          objectPosition={mediaPosition}
           tone="ink"
           ratio="auto"
           priority
@@ -43,7 +46,7 @@ export function OversizedHero({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(15,14,9,0.55) 0%, rgba(15,14,9,0.12) 32%, rgba(15,14,9,0.12) 52%, rgba(15,14,9,0.82) 100%)",
+            "linear-gradient(180deg, rgba(40,38,38,0.55) 0%, rgba(40,38,38,0.12) 32%, rgba(40,38,38,0.12) 52%, rgba(40,38,38,0.82) 100%)",
         }}
       />
 
