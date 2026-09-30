@@ -45,8 +45,7 @@ All respect `prefers-reduced-motion` (via `<MotionConfig reducedMotion="user">` 
   Assignments: hero `work-blonde-profile`; `/crlab` hero `work-blowdry`; tiles
   `studio-scalp-wall` / `work-blonde-back` / `work-tape-in`; before/after `result-colour`,
   `result-length`; reviews `review-renee`, `review-amanda` (Google screenshots, cropped);
-  Amanda `team-amanda`; Join Us `stylist-seated` (**confirm who this is — may be Renee's portrait**).
-- **Still needs a real photo:** `ILE` on the Team page (placeholder).
+  Amanda `team-amanda`; Renee `team-renee` (client-supplied headshot); Join Us `stylist-seated`.
 - Portrait crops are tuned per-image with `imagePosition` (CSS `object-position`) in the content files.
 
 ## Placeholders — swap before launch

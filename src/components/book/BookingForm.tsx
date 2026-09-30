@@ -66,9 +66,7 @@ export function BookingForm({
             defaultValue={presetStylist ?? ""}
             options={[
               { value: "", label: "No preference" },
-              ...team
-                .filter((m) => m.slug !== "new-chair")
-                .map((m) => ({ value: m.slug, label: `${m.name} — ${m.role}` })),
+              ...team.map((m) => ({ value: m.slug, label: `${m.name} — ${m.role}` })),
             ]}
           />
         </>

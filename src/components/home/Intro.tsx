@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 
 const stats = [
   { value: "14 yrs", label: "Longest-tenured stylist" },
-  { value: "6", label: "Specialists on the floor" },
+  { value: "2", label: "Specialists on the floor" },
   { value: "1:1", label: "Every consultation" },
 ];
 

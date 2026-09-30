@@ -13,7 +13,7 @@ import { faqs } from "@/content/faqs";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "The specialists behind Nine Zero Four — restoration, colour, extensions, permanent makeup, and treatments.",
+    "Meet Amanda and Renee — the specialists behind Nine Zero Four's restoration, extensions, and hair-loss solutions.",
 };
 
 const faqItems: AccordionItem[] = faqs.map((f) => ({
@@ -52,7 +52,7 @@ export default function TeamPage() {
                 effect="rise"
                 className="display-md max-w-[16ch]"
               >
-                Blonding, extensions, restoration, and PMU — under one roof.
+                Extensions, hair-loss solutions, and restoration — under one roof.
               </SplitText>
               <RevealItem as="p" className="text-ink-soft">
                 Nine Zero Four serves Ponte Vedra Beach and greater Jacksonville
@@ -67,7 +67,7 @@ export default function TeamPage() {
       {/* Team grid */}
       <section className="bg-panel-2">
         <Container className="py-20 md:py-28">
-          <Reveal group className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <Reveal group className="mx-auto grid max-w-4xl gap-x-8 gap-y-12 sm:grid-cols-2">
             {team.map((m) => (
               <RevealItem key={m.slug} as="div">
                 <article className="group flex flex-col transition-transform duration-300 ease-out hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
@@ -76,16 +76,10 @@ export default function TeamPage() {
                     src={m.image}
                     objectPosition={m.imagePosition}
                     ratio="4 / 5"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 896px) 448px, (min-width: 640px) 50vw, 100vw"
                     className="rounded-md transition-[filter] duration-300 group-hover:brightness-[0.97]"
                   />
-                  <h3
-                    className={
-                      m.slug === "new-chair"
-                        ? "mt-4 mb-1 font-script text-[2.6rem] leading-[1.3] tracking-normal [font-size-adjust:none]"
-                        : "mt-5 font-display text-2xl tracking-tight"
-                    }
-                  >
+                  <h3 className="mt-5 font-display text-2xl tracking-tight">
                     {m.name}
                   </h3>
                   <p className="text-sm text-accent">{m.role}</p>
@@ -107,9 +101,7 @@ export default function TeamPage() {
                     href={m.bookUrl}
                     className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-medium"
                   >
-                    {m.slug === "new-chair"
-                      ? "See openings"
-                      : `Book with ${m.name.split(" ")[0]}`}
+                    Book with {m.name}
                     <span
                       aria-hidden
                       className="transition-transform group-hover:translate-x-1"
