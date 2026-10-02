@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="bg-inverse text-inverse-ink">
-      <Container className="py-16 md:py-24">
+      <Container className="pt-16 pb-8 md:pt-24 md:pb-10 [main:has(>[data-cta-band]:last-child)+footer_&]:pt-0">
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr] md:gap-8">
           <div>
             <p className="font-display text-2xl tracking-tight">Keep in touch</p>

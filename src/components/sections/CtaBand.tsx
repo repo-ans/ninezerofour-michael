@@ -20,7 +20,7 @@ export function CtaBand({
   secondaryHref?: string;
 }) {
   return (
-    <section className="bg-inverse text-inverse-ink">
+    <section data-cta-band className="bg-inverse text-inverse-ink">
       <Container className="py-20 md:py-28">
         <Reveal group className="flex flex-col gap-6">
           <SplitText

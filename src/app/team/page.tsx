@@ -33,15 +33,7 @@ export default function TeamPage() {
       {/* Leading with passion */}
       <section>
         <Container className="py-20 md:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal>
-              <Media
-                label="The Nine Zero Four team"
-                src="/team3.webp"
-                ratio="4 / 5"
-                className="rounded-md"
-              />
-            </Reveal>
+          <div className="max-w-3xl">
             <Reveal group className="flex flex-col gap-5">
               <RevealItem as="p" className="eyebrow">
                 Leading with expertise
