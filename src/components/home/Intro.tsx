@@ -5,7 +5,7 @@ import { CountUp } from "@/components/motion/CountUp";
 import { ButtonLink } from "@/components/ui/Button";
 
 const stats = [
-  { value: "14 yrs", label: "Longest-tenured stylist" },
+  { value: "30 yrs", label: "Longest-standing stylist" },
   { value: "2", label: "Specialists on the floor" },
   { value: "1:1", label: "Every consultation" },
 ];
@@ -37,14 +37,9 @@ export function Intro() {
             className="text-lg leading-relaxed"
           >
             Nine Zero Four is a studio for advanced hair restoration, dimensional
-            colour, and natural extensions. Every client begins with a seated
-            assessment — magnified imaging, a review of your history, and a
-            written plan — before a single service is booked.
+            colour, and natural extensions. Every client begins with a thorough
+            consultation.
           </SplitText>
-          <RevealItem as="p" className="text-ink-soft">
-            It is a calmer, more clinical way to work: measured, documented, and
-            built entirely around your hair rather than a template.
-          </RevealItem>
           <RevealItem as="div">
             <ButtonLink href="/services" variant="outline" size="sm">
               Explore services

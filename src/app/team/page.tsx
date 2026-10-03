@@ -13,7 +13,7 @@ import { faqs } from "@/content/faqs";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Meet Amanda and Renee — the specialists behind Nine Zero Four's restoration, extensions, and hair-loss solutions.",
+    "Meet Renee and Amanda — the stylists behind Nine Zero Four's color and extensions.",
 };
 
 const faqItems: AccordionItem[] = faqs.map((f) => ({

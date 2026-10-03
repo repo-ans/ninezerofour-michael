@@ -3,13 +3,19 @@ import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { Accordion, type AccordionItem } from "@/components/ui/Accordion";
 import { ButtonLink } from "@/components/ui/Button";
-import { serviceCategories, servicesByCategory } from "@/content/services";
+import {
+  formatPrice,
+  serviceCategories,
+  servicesByCategory,
+} from "@/content/services";
 import { site } from "@/content/site";
 
 function priceRange(categoryId: string) {
-  const priced = servicesByCategory(categoryId).filter((s) => s.priceFrom > 0);
+  const priced = servicesByCategory(categoryId).flatMap((s) =>
+    s.price ? [s.price] : [],
+  );
   if (priced.length === 0) return "Consultation";
-  const min = Math.min(...priced.map((s) => s.priceFrom));
+  const min = Math.min(...priced);
   return `From $${min}`;
 }
 
@@ -25,12 +31,9 @@ const items: AccordionItem[] = serviceCategories
             key={s.slug}
             className="flex items-baseline justify-between gap-6 py-3"
           >
-            <div>
-              <p className="text-ink">{s.name}</p>
-              <p className="text-sm text-ink-soft">{s.duration}</p>
-            </div>
+            <p className="text-ink">{s.name}</p>
             <span className="shrink-0 text-sm text-ink-soft">
-              {s.priceFrom === 0 ? "Complimentary" : `From $${s.priceFrom}`}
+              {formatPrice(s)}
             </span>
           </li>
         ))}
@@ -55,8 +58,8 @@ export function PricingAccordion() {
                 Clear starting points.
               </SplitText>
           <RevealItem as="p" className="text-ink-soft">
-            Figures below are where each service begins. Your exact quote is
-            confirmed at consultation or before service — never at checkout.
+            Prices below reflect our current menu. Your exact quote is confirmed at
+            consultation or before service — never at checkout.
           </RevealItem>
           <RevealItem as="div" className="pt-1">
             <ButtonLink href={site.bookUrl} size="sm">

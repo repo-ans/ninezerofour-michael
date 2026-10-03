@@ -92,7 +92,7 @@ export const journey: JourneyStage[] = [
 export const spa = {
   eyebrow: "CRLAB Hair SPA",
   headline: "New rituals. New protocols. New experiences.",
-  body: "The Hair SPA extends the protocol beyond the clinical — a considered, sensory reset for the scalp that keeps the whole journey sustainable.",
+  body: "The Hair SPA extends the protocol beyond the chair — a considered, sensory reset for the scalp that keeps the whole journey sustainable.",
 };
 
 export const premium = {

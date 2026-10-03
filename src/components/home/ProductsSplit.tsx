@@ -37,7 +37,7 @@ export function ProductsSplit() {
                 What we use in-studio is what we send you home with.
               </SplitText>
           <RevealItem as="p" className="max-w-[46ch] text-inverse-ink/70">
-            We stock a short, deliberate range — clinical scalp care, bond
+            We stock a short, deliberate range — professional scalp care, bond
             repair, and colour-safe daily products — and we only recommend what
             your assessment actually calls for.
           </RevealItem>

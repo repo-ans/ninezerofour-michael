@@ -9,326 +9,289 @@ export type ServiceCategory = {
   image: string;
 };
 
+/**
+ * Service menu — mirrors the salon's Vagaro listing (names, descriptions,
+ * prices), with the client's corrections applied on top.
+ */
 export type Service = {
   slug: string;
   name: string;
   category: string; // ServiceCategory.id
-  priceFrom: number;
-  duration: string;
-  /** Short line shown on the collapsed card. */
-  summary: string;
-  /** Full copy shown in the detail modal. */
+  /** Numeric price in USD; null when Vagaro lists no fixed price. */
+  price: number | null;
+  /** Overrides the default price display (e.g. "$175+", "Priced hourly"). */
+  priceLabel?: string;
   description: string;
-  /** Bulleted "what's included" points for the modal. */
-  includes: string[];
-  /** Shown when a service is a specialty offered by a subset of the team. */
-  stylist?: string;
 };
+
+export function formatPrice(service: Service): string {
+  if (service.priceLabel) return service.priceLabel;
+  if (service.price === null) return "Price varies";
+  if (service.price === 0) return "Complimentary";
+  return `$${service.price}`;
+}
 
 export const serviceCategories: ServiceCategory[] = [
   {
     id: "all",
     label: "All",
-    blurb: "Every service across the studio.",
+    blurb: "Every service across the salon.",
     media: "The Nine Zero Four salon floor",
     image: "/studio-floor.webp",
   },
   {
-    id: "restoration",
-    label: "Scalp & Restoration",
-    blurb:
-      "Assessment-led programmes for thinning, shedding, and density — the clinical core of the studio.",
-    media: "The scalp-care wall",
-    image: "/studio-scalp-wall.webp",
-  },
-  {
-    id: "hairloss",
-    label: "Mesh & Meshless Solutions",
-    blurb:
-      "Custom hair-replacement systems and ongoing maintenance for fine, thin, and thinning hair — a dedicated specialty at the studio.",
-    media: "An extension bond at the crown",
-    image: "/work-extension-detail.webp",
-  },
-  {
-    id: "color",
-    label: "Colour",
-    blurb: "Dimensional blonding and lived-in colour, mapped to your hair's history.",
-    media: "Soft dimensional blonde colour",
-    image: "/work-blonde-back.webp",
-  },
-  {
     id: "extensions",
     label: "Extensions",
-    blurb: "Hand-tied, individual, and K-tip methods for seamless length and fullness.",
+    blurb: "Hand-tied, tape-in, and K-tip extensions for seamless length and fullness.",
     media: "A stylist installing tape-in extensions",
     image: "/work-tape-in.webp",
   },
   {
     id: "haircuts",
     label: "Haircuts",
-    blurb: "Precision cutting and dry-detail finishing for every texture.",
+    blurb: "Precision cuts, smoothing, and in-salon treatment.",
     media: "A blow-dry and finish at the chair",
     image: "/work-blowdry.webp",
   },
   {
-    id: "treatments",
-    label: "Treatments",
-    blurb: "In-studio conditioning, bond repair, and scalp therapies.",
-    media: "The Nine Zero Four consultation area",
-    image: "/studio-consultation.webp",
+    id: "color",
+    label: "Color Services",
+    blurb: "Custom color, glosses, and grey coverage tailored to you.",
+    media: "Soft dimensional blonde colour",
+    image: "/work-blonde-back.webp",
+  },
+  {
+    id: "hairloss",
+    label: "Hair Loss Services",
+    blurb: "Mesh and meshless integration, CR Lab hair systems, and scalp pigmentation for thinning hair.",
+    media: "An extension bond at the crown",
+    image: "/work-extension-detail.webp",
   },
 ];
 
 export const services: Service[] = [
-  // Scalp & Restoration
-  {
-    slug: "scalp-consultation",
-    name: "Scalp & Density Consultation",
-    category: "restoration",
-    priceFrom: 0,
-    duration: "45 min",
-    summary: "Trichoscope analysis, history review, and a written plan.",
-    description:
-      "A seated, unhurried assessment. We photograph and magnify the scalp, measure density across defined zones, review medical and styling history, and identify the drivers behind shedding or thinning. You leave with a written, staged plan — and every consultation fee is credited toward your first programme service.",
-    includes: [
-      "Magnified trichoscope imaging with baseline photos",
-      "Zone-by-zone density and miniaturisation notes",
-      "Lifestyle, medication, and styling history review",
-      "Written multi-phase plan with timelines",
-    ],
-  },
-  {
-    slug: "restoration-programme",
-    name: "Density Restoration Programme",
-    category: "restoration",
-    priceFrom: 220,
-    duration: "90 min / visit",
-    summary: "Recurring in-studio therapy with progress imaging.",
-    description:
-      "A structured course of in-studio scalp therapy — exfoliation, targeted serums, low-level light, and guided home protocol — reviewed against your baseline images at each milestone. Priced per visit; most plans run six to twelve visits.",
-    includes: [
-      "Scalp exfoliation and decongesting treatment",
-      "Targeted actives applied under professional guidance",
-      "Low-level light therapy session",
-      "Progress imaging and plan adjustment every 4th visit",
-    ],
-  },
-
-  // Mesh & Meshless Solutions
-  {
-    slug: "mesh-integration",
-    name: "Mesh Integration System",
-    category: "hairloss",
-    priceFrom: 380,
-    duration: "2 – 3 hr",
-    summary: "A custom-matched mesh base, fitted and blended for natural density.",
-    description:
-      "A breathable, mesh-based integration system built to your colour, density, and pattern — fitted, cut, and blended by our hair-loss specialist so the transition is invisible. Includes fitting, customisation, and a home-care lesson.",
-    includes: [
-      "Colour and density matching",
-      "Custom mesh base fitting",
-      "In-studio cut-in and blend",
-      "Home-care and styling lesson",
-    ],
-    stylist: "With select stylists",
-  },
-  {
-    slug: "meshless-integration",
-    name: "Meshless Integration System",
-    category: "hairloss",
-    priceFrom: 380,
-    duration: "2 – 3 hr",
-    summary: "A mesh-free alternative for sensitive scalps, fitted and blended in-studio.",
-    description:
-      "For clients who prefer a mesh-free base, this integration method attaches without a mesh foundation — a gentler option for sensitive scalps, matched and blended by our hair-loss specialist for an undetectable result.",
-    includes: [
-      "Colour and density matching",
-      "Mesh-free base fitting",
-      "In-studio cut-in and blend",
-      "Home-care and styling lesson",
-    ],
-    stylist: "With select stylists",
-  },
-  {
-    slug: "integration-maintenance",
-    name: "Integration Maintenance & Move-Up",
-    category: "hairloss",
-    priceFrom: 150,
-    duration: "60 – 90 min",
-    summary: "Recurring upkeep to keep mesh and meshless systems secure and comfortable.",
-    description:
-      "Scheduled maintenance for mesh and meshless integration systems — cleaning, re-securing, and a comfort check to keep your system looking natural between full replacements.",
-    includes: [
-      "System clean and inspection",
-      "Re-securing and adjustment",
-      "Scalp comfort check",
-    ],
-    stylist: "With select stylists",
-  },
-
-  // Colour
-  {
-    slug: "dimensional-blonding",
-    name: "Dimensional Blonding",
-    category: "color",
-    priceFrom: 185,
-    duration: "3 – 4 hr",
-    summary: "Foil and balayage placement for depth and brightness.",
-    description:
-      "A full session of hand-painted and foiled lightening designed around your face and how your hair falls. We work in stages to protect integrity, glossing and toning to a finish that grows out softly.",
-    includes: [
-      "Custom lightening placement",
-      "Bond-protecting additive throughout",
-      "Toning and gloss",
-      "Finishing blow-dry and style",
-    ],
-  },
-  {
-    slug: "lived-in-colour",
-    name: "Lived-In Colour",
-    category: "color",
-    priceFrom: 140,
-    duration: "2 – 3 hr",
-    summary: "Root melts, glazes, and low-maintenance depth.",
-    description:
-      "Soft, rooted colour that flatters without a rigid regrowth line. Ideal between blonding sessions or as a standalone refresh.",
-    includes: ["Root melt or shadow", "All-over gloss", "Blow-dry and style"],
-  },
-  {
-    slug: "colour-correction",
-    name: "Colour Correction",
-    category: "color",
-    priceFrom: 250,
-    duration: "By consultation",
-    summary: "Multi-session repair of banding, brass, or over-processing.",
-    description:
-      "Correction work is booked only after a consultation so we can assess condition, history, and the number of sessions required. Pricing is quoted per session against a clear roadmap.",
-    includes: [
-      "Strand testing and condition assessment",
-      "Staged correction roadmap",
-      "Integrity treatment at each visit",
-    ],
-  },
-
   // Extensions
   {
-    slug: "hand-tied-extensions",
-    name: "Hand-Tied Extensions",
+    slug: "custom-extension-consultation",
+    name: "Custom Extension Consultation",
     category: "extensions",
-    priceFrom: 400,
-    duration: "3 hr + hair",
-    summary: "Wefted rows for natural length and fullness.",
+    price: 35,
     description:
-      "Lightweight hand-tied wefts installed on a beaded foundation, colour-matched and cut to blend with your own hair. Price covers installation; hair is quoted separately after your consultation.",
-    includes: [
-      "Foundation install and weft placement",
-      "Colour blend and custom cut",
-      "Styling and home-care lesson",
-    ],
+      "Price for the consult will be refunded at the time of the appointment, or used towards the extensions. If you are a no-show, you will forfeit this amount. This fee allows for commitment to the appointment and values dedicated time.",
   },
   {
-    slug: "individual-extensions",
-    name: "Individual / I-Tip Extensions",
+    slug: "handtied-extension-1-row-install",
+    name: "Handtied Extension 1 Row Install",
     category: "extensions",
-    priceFrom: 350,
-    duration: "2 – 4 hr + hair",
-    summary: "Strand-by-strand placement for fine hair.",
-    description:
-      "Discreet single-strand bonds suited to finer hair or targeted fullness. Installation price shown; hair quoted after consultation.",
-    includes: ["Strand placement", "Colour blend and cut", "Move-up scheduling"],
+    price: 350,
+    description: "Handtied extension installation for 1 row.",
   },
   {
-    slug: "k-tip-extensions",
-    name: "K-Tip Extensions",
+    slug: "1-row-maintenance",
+    name: "1 Row Maintenance",
     category: "extensions",
-    priceFrom: 375,
-    duration: "2 – 4 hr + hair",
-    summary: "Keratin-tip strands fused for a seamless, long-wearing result.",
+    price: 265,
     description:
-      "Keratin-tip (K-tip) strands fused strand-by-strand with heat for a long-wearing, virtually undetectable finish — a specialty method offered by select stylists. Installation price shown; hair quoted after consultation.",
-    includes: ["Strand placement", "Colour blend and cut", "Move-up scheduling"],
-    stylist: "With select stylists",
+      "Specializes in the removal and reinstallation of your existing one row extensions, ensuring a seamless and professional result. Clients are advised to arrive with clean, product-free hair; a blowout can be added for an additional fee.",
   },
   {
-    slug: "extension-maintenance",
-    name: "Extension Move-Up",
+    slug: "2-row-maintenance",
+    name: "2 Row Maintenance",
     category: "extensions",
-    priceFrom: 150,
-    duration: "1.5 – 2.5 hr",
-    summary: "Reposition and refresh every 6 – 9 weeks.",
+    price: 350,
     description:
-      "Removal, reinstallation, and a re-blend to keep rows sitting close and comfortable as your hair grows.",
-    includes: ["Take-down and scalp check", "Reinstall", "Re-blend and style"],
+      "Consists of removing your 2 rows of hand-tied extensions, a signature shampoo, reinstall, blowout, and a treatment consisting of signature products customized together just for you. Includes beach waves if desired.",
+  },
+  {
+    slug: "3-row-maintenance",
+    name: "3 Row Maintenance",
+    category: "extensions",
+    price: 450,
+    description:
+      "Consists of removing your 3 rows of hand-tied extensions, a signature shampoo, reinstall, blowout, and a treatment consisting of signature products customized together just for you. Includes beach waves if desired.",
+  },
+  {
+    slug: "extension-3-rows-plus",
+    name: "Extension 3 Rows +",
+    category: "extensions",
+    price: 475,
+    description:
+      "Offers specialized maintenance appointments for hair extensions, ensuring that three or more rows are expertly cared for and refreshed. Thorough assessments and adjustments are provided to maintain extension integrity.",
+  },
+  {
+    slug: "tape-row-install",
+    name: "Tape Row Install",
+    category: "extensions",
+    price: 175,
+    priceLabel: "$175+",
+    description:
+      "Must have a consultation prior to install. Offers a seamless and natural look by applying high-quality tape-in extensions. Includes a professional blowout.",
+  },
+  {
+    slug: "2-tape-rows",
+    name: "2 Tape Rows",
+    category: "extensions",
+    price: 275,
+    description:
+      "Must have a consultation prior to install. Offers a seamless and natural look by applying two rows of high-quality tape-in extensions. Includes a professional blowout.",
+  },
+  {
+    slug: "covet-mane-fix-tape",
+    name: "Covet & Mane Fix Tape",
+    category: "extensions",
+    price: 15,
+    description:
+      "A quick 15-minute appointment to secure any loose tape extensions following installation. A fee applies if extensions were installed two weeks or more prior.",
+  },
+  {
+    slug: "k-tip-service",
+    name: "K Tip Service",
+    category: "extensions",
+    price: null,
+    priceLabel: "Priced hourly",
+    description:
+      "Individual keratin bonds. Charged per hour for the install service. Hair is sold separately. Must have a consultation prior to booking.",
+  },
+  {
+    slug: "k-tip-removal",
+    name: "K Tip Removal",
+    category: "extensions",
+    price: null,
+    priceLabel: "Priced hourly",
+    description:
+      "Removing K tips; charged by the hour. A quote is required before booking.",
   },
 
   // Haircuts
   {
-    slug: "precision-cut",
-    name: "Precision Cut & Style",
+    slug: "woman-haircut",
+    name: "Woman Haircut",
     category: "haircuts",
-    priceFrom: 75,
-    duration: "60 min",
-    summary: "Consultation, shampoo, cut, and finish.",
+    price: 75,
     description:
-      "A cut built around your growth patterns, density, and how much time you want to spend at home — finished with a blow-dry and a few minutes of styling guidance.",
-    includes: ["Consultation", "Shampoo and scalp massage", "Cut and finish"],
+      "Includes a thorough wash followed by a precision cut on DRY hair. Each haircut is tailored to enhance unique features with Vidal Sassoon styling techniques.",
   },
   {
-    slug: "dry-detail",
-    name: "Dry Detail / Restyle",
+    slug: "magic-sleek",
+    name: "Magic Sleek",
     category: "haircuts",
-    priceFrom: 95,
-    duration: "75 min",
-    summary: "Cutting into a finished style for shape and movement.",
+    price: 350,
     description:
-      "A longer appointment for significant shape changes or curly and textured hair, cut dry so we can see exactly how it falls.",
-    includes: ["Extended consultation", "Dry cutting", "Wash and re-style"],
+      "A gentle and effective hair treatment using natural ingredients to smooth, straighten, and control frizz. Suitable for all hair types (including colored hair) and protects color longevity.",
   },
   {
-    slug: "fringe-trim",
-    name: "Fringe & Neckline Trim",
+    slug: "fusio-dose-treatment",
+    name: "Fusio-Dose Treatment",
     category: "haircuts",
-    priceFrom: 25,
-    duration: "20 min",
-    summary: "Complimentary within two weeks of a cut.",
-    description:
-      "A quick tidy of your fringe or neckline between full appointments. Free within fourteen days of a Precision Cut.",
-    includes: ["Fringe or neckline shape", "Quick finish"],
+    price: 45,
+    description: "An in-salon Fusio-Dose treatment, customized to your hair.",
   },
 
-  // Treatments
+  // Color Services
   {
-    slug: "bond-repair",
-    name: "Bond Repair Treatment",
-    category: "treatments",
-    priceFrom: 45,
-    duration: "30 min add-on",
-    summary: "In-studio strengthening for compromised hair.",
+    slug: "color-consultation",
+    name: "Color Consultation",
+    category: "color",
+    price: 0,
     description:
-      "A professional-strength bond-building treatment, added to any colour or styling appointment, to rebuild internal structure after chemical or heat stress.",
-    includes: ["Multi-step application", "Heat processing", "Post-treatment seal"],
+      "A pre-booked 30-minute appointment to consult about current color and future goals. Sets up a game plan and path (does not include performing color services). A $25 fee applies toward your total quote when a full service appointment is booked.",
   },
   {
-    slug: "scalp-therapy",
-    name: "Scalp Therapy Facial",
-    category: "treatments",
-    priceFrom: 85,
-    duration: "45 min",
-    summary: "Exfoliation, massage, and a balancing mask.",
+    slug: "full-custom-color",
+    name: "Full Custom Color",
+    category: "color",
+    price: 285,
     description:
-      "A standalone scalp reset — physical and enzymatic exfoliation, lymphatic massage, and a balancing mask — to relieve build-up, flaking, and tightness.",
-    includes: ["Double exfoliation", "10-minute massage", "Balancing mask and rinse"],
+      "Vibrant, tailored hair color ranging from highlights to lowlights. Additional fees apply for blowouts and haircuts. Services with Renee start at $385.",
   },
   {
-    slug: "gloss-refresh",
-    name: "Gloss & Shine Refresh",
-    category: "treatments",
-    priceFrom: 55,
-    duration: "30 min",
-    summary: "Tone and seal between colour appointments.",
+    slug: "partial-custom-color",
+    name: "Partial Custom Color",
+    category: "color",
+    price: 235,
     description:
-      "A quick, low-commitment gloss to revive tone, boost shine, and smooth the cuticle — no lightener involved.",
-    includes: ["Custom gloss", "Blow-dry"],
+      "Ideal for refreshing your look between full highlighting appointments, featuring tailored face-frame highlights or lowlights. Haircut incurs an additional charge.",
+  },
+  {
+    slug: "single-process-color",
+    name: "Single Process Color / Covering Greys",
+    category: "color",
+    price: 145,
+    description:
+      "Consists of coloring the base of your hair only for covering gray regrowth or going darker at the base. Haircuts are extra.",
+  },
+  {
+    slug: "lightener-root-retouch",
+    name: "Lightener Root Retouch",
+    category: "color",
+    price: null,
+    description:
+      "For super blonde/platinum blonde root touch-ups. Intended for less than half an inch of regrowth (up to 6 weeks maintenance; extra fees apply beyond that timeframe).",
+  },
+  {
+    slug: "t-zone-color",
+    name: "T-Zone Color",
+    category: "color",
+    price: null,
+    description:
+      "Refresh between usual single process color appointments. Includes Face Frame Color, Blow Dry, and Style.",
+  },
+  {
+    slug: "color-gloss",
+    name: "Color Gloss",
+    category: "color",
+    price: 55,
+    description: "Offers a vibrant and durable finish. A blowout is not included.",
+  },
+
+  // Hair Loss Services
+  {
+    slug: "hair-loss-thinning-consultation",
+    name: "Hair Loss / Thinning Consultation",
+    category: "hairloss",
+    price: 25,
+    description:
+      "For thinning hair, shedding, or visible scalp due to hormones, stress, genetics, postpartum, or weight loss. The $25 charge is applied toward your service if you move forward.",
+  },
+  {
+    slug: "mesh-or-meshless-integration",
+    name: "Mesh or Meshless Integration",
+    category: "hairloss",
+    price: null,
+    description:
+      "Non-surgical, semi-permanent hair loss solution using a breathable mesh foundation attached with hair extensions, blending with existing hair for thinning or loss.",
+  },
+  {
+    slug: "mesh-designer-appointment",
+    name: "Mesh Designer Appointment",
+    category: "hairloss",
+    price: 150,
+    description:
+      "Personalized 1 to 1.5-hour experience creating a hair system tailored for mesh integration.",
+  },
+  {
+    slug: "scalp-pigmentation",
+    name: "Scalp Pigmentation",
+    category: "hairloss",
+    price: 450,
+    description:
+      "Specialized technique to fill in areas of thinning hair using color-matched pigments to create the appearance of a fuller scalp.",
+  },
+  {
+    slug: "cr-lab-designer-appointment",
+    name: "CR Lab Designer Appointment",
+    category: "hairloss",
+    price: 150,
+    description:
+      "A 1.5-hour session including a detailed head casting process to create a personalized hair system. Installation follows 3 to 4 months later.",
+  },
+  {
+    slug: "cr-lab-install-appointment",
+    name: "CR Lab Install Appointment",
+    category: "hairloss",
+    price: 0,
+    description:
+      "Seamless and professional installation of your custom hair system following the initial creation period.",
   },
 ];
 

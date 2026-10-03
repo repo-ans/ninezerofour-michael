@@ -1,18 +1,13 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { Service } from "@/content/services";
+import { formatPrice, type Service } from "@/content/services";
 import { ease } from "@/lib/motion";
 import { site } from "@/content/site";
 
-function priceLabel(service: Service) {
-  if (service.priceFrom === 0) return "Complimentary";
-  return `From $${service.priceFrom}`;
-}
-
 /**
  * Animation #4 — hover-expand service card.
- * Collapsed: name, price, duration. On hover / keyboard focus the card lifts
+ * Collapsed: name, price, description. On hover / keyboard focus the card lifts
  * slightly and the action buttons fade + slide up into view. On touch devices
  * (no hover) the actions are shown permanently.
  */
@@ -44,17 +39,12 @@ export function ServiceCard({
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="font-display text-xl tracking-tight">{service.name}</h3>
         <span className="shrink-0 text-sm text-ink-soft">
-          {priceLabel(service)}
+          {formatPrice(service)}
         </span>
       </div>
-      <p className="mt-1.5 text-sm text-ink-soft">
-        {service.duration} &middot; {service.summary}
+      <p className="mt-1.5 line-clamp-2 text-sm text-ink-soft">
+        {service.description}
       </p>
-      {service.stylist ? (
-        <p className="mt-1.5 text-xs font-medium tracking-wide text-accent uppercase">
-          {service.stylist}
-        </p>
-      ) : null}
 
       <div
         className={[

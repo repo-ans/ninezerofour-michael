@@ -3,7 +3,7 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: "Who should I book with?",
-    a: "If you're here for thinning, shedding, or density concerns, start with Amanda for a Scalp & Density Consultation. For colour, book Kayla; for hand-tied or I-tip extensions, Kaydee. For K-tip extensions and mesh or meshless hair-loss solutions, book Renee — her chair is currently reserved for extension, hair-loss, and colour clients, so haircut-only or standalone blow-dry requests are best booked with another stylist. Not sure who to see? Choose any consultation and we'll route you to the right person before your appointment.",
+    a: "If you're here for thinning, shedding, or density concerns, start with Amanda for a Hair Loss / Thinning Consultation. For colour, book Kayla; for hand-tied or tape-in extensions, Kaydee. For K-tip extensions and mesh or meshless hair-loss solutions, book Renee — her chair is currently reserved for extension, hair-loss, and colour clients, so haircut-only or standalone blow-dry requests are best booked with another stylist. Not sure who to see? Choose any consultation and we'll route you to the right person before your appointment.",
   },
   {
     q: "How do I book, and do I need a consultation first?",

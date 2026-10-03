@@ -5,10 +5,10 @@ import { Media } from "@/components/ui/Media";
 
 const tiles = [
   {
-    label: "Scalp & Restoration",
+    label: "Hair Loss Solutions",
     media: "The scalp-care wall at Nine Zero Four",
     image: "/studio-scalp-wall.webp",
-    copy: "Assessment-led programmes for thinning and density — imaged, staged, and reviewed against a baseline.",
+    copy: "Mesh and meshless integration, CR Lab hair systems, and scalp pigmentation — starting with a hair loss / thinning consultation.",
     href: "/services",
   },
   {
@@ -22,7 +22,7 @@ const tiles = [
     label: "Natural Extensions",
     media: "A stylist installing tape-in extensions",
     image: "/work-tape-in.webp",
-    copy: "Hand-tied and individual methods, colour-matched and cut so the transition is invisible.",
+    copy: "Hand-tied, tape-in, and K-tip methods, colour-matched and blended so the transition is invisible.",
     href: "/services",
   },
 ];

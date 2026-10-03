@@ -6,7 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { useLenis } from "lenis/react";
 import type { Service } from "@/content/services";
-import { serviceCategories } from "@/content/services";
+import { formatPrice, serviceCategories } from "@/content/services";
 import { site } from "@/content/site";
 import { ease } from "@/lib/motion";
 
@@ -107,31 +107,11 @@ export function ServiceModal({
               {service.name}
             </h2>
             <p className="mt-2 text-sm text-ink-soft">
-              {service.priceFrom === 0
-                ? "Complimentary"
-                : `From $${service.priceFrom}`}{" "}
-              &middot; {service.duration}
+              {formatPrice(service)}
             </p>
-            {service.stylist ? (
-              <p className="mt-1 text-xs font-medium tracking-wide text-accent uppercase">
-                {service.stylist}
-              </p>
-            ) : null}
 
             <p className="mt-5 leading-relaxed">{service.description}</p>
 
-            <p className="eyebrow mt-6">What&rsquo;s included</p>
-            <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-              {service.includes.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span
-                    aria-hidden
-                    className="mt-2 h-px w-4 shrink-0 bg-accent"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
