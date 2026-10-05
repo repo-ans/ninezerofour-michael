@@ -58,7 +58,7 @@ function useHoverMotion() {
   };
 }
 
-/** Diagonal light sweep, tinted to the button's own text colour. */
+/** Diagonal light sweep, tinted to the button's own text color. */
 function Sheen() {
   return (
     <span

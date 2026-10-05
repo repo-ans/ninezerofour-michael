@@ -57,7 +57,7 @@ export const serviceCategories: ServiceCategory[] = [
     id: "color",
     label: "Color Services",
     blurb: "Custom color, glosses, and grey coverage tailored to you.",
-    media: "Soft dimensional blonde colour",
+    media: "Soft dimensional blonde color",
     image: "/work-blonde-back.webp",
   },
   {

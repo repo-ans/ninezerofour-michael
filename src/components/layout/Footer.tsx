@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <p className="font-display text-2xl tracking-tight">Keep in touch</p>
             <p className="mt-3 max-w-sm text-sm text-inverse-ink/70">
-              Studio notes on hair health, colour, and restoration — a few times a
+              Studio notes on hair health, color, and restoration — a few times a
               year, never more.
             </p>
             <NewsletterForm />

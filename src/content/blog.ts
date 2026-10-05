@@ -34,15 +34,15 @@ export const posts: BlogPost[] = [
     title: "Going blonder without wrecking your hair",
     date: "2025-06-11",
     readingTime: "4 min read",
-    category: "Colour",
+    category: "Color",
     excerpt:
       "Why we lighten in stages, what bond additives really do, and how to tell if your hair can take another session.",
-    media: "Soft dimensional blonde colour",
+    media: "Soft dimensional blonde color",
     image: "/work-blonde-back.webp",
     body: [
       "The fastest route to bright blonde is almost never the healthiest one. Hair has a finite amount of structural protein, and every lightening service spends some of it. Our job is to spend it slowly.",
       "Working in stages — lifting part of the head, or lifting less per visit — lets us assess how your hair responds before committing further. Bond-protecting additives help, but they're insurance, not permission to over-process.",
-      "A good sign your hair can take another session: it still has elasticity when wet, the ends aren't gummy, and last time's colour held its tone. If any of those are off, we treat first and lighten later.",
+      "A good sign your hair can take another session: it still has elasticity when wet, the ends aren't gummy, and last time's color held its tone. If any of those are off, we treat first and lighten later.",
     ],
   },
   {
@@ -74,7 +74,7 @@ export const posts: BlogPost[] = [
     body: [
       "You don't need ten products. You need a gentle cleanser, a conditioner matched to your length, a weekly treatment, and heat protection — used consistently.",
       "The step most people skip is the weekly scalp cleanse. Build-up doesn't just dull your hair; it slows the follicle. Five minutes with an exfoliating scalp product once a week changes how the next appointment goes.",
-      "Everything else is habit: lower heat settings, air-dry when you can, and don't wash the day before a colour appointment.",
+      "Everything else is habit: lower heat settings, air-dry when you can, and don't wash the day before a color appointment.",
     ],
   },
 ];

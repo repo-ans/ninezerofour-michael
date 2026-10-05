@@ -12,8 +12,8 @@ const tiles = [
     href: "/services",
   },
   {
-    label: "Dimensional Colour",
-    media: "Soft dimensional colour",
+    label: "Dimensional Color",
+    media: "Soft dimensional color",
     image: "/work-blonde-back.webp",
     copy: "Hand-painted and foiled lightening mapped to your hair's history, worked in stages to protect it.",
     href: "/services",
@@ -22,7 +22,7 @@ const tiles = [
     label: "Natural Extensions",
     media: "A stylist installing tape-in extensions",
     image: "/work-tape-in.webp",
-    copy: "Hand-tied, tape-in, and K-tip methods, colour-matched and blended so the transition is invisible.",
+    copy: "Hand-tied, tape-in, and K-tip methods, color-matched and blended so the transition is invisible.",
     href: "/services",
   },
 ];

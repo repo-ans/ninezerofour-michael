@@ -37,7 +37,7 @@ export function Intro() {
             className="text-lg leading-relaxed"
           >
             Nine Zero Four is a studio for advanced hair restoration, dimensional
-            colour, and natural extensions. Every client begins with a thorough
+            color, and natural extensions. Every client begins with a thorough
             consultation.
           </SplitText>
           <RevealItem as="div">

@@ -3,7 +3,7 @@
 import { motion, useScroll, useSpring } from "motion/react";
 
 /**
- * Thin accent-coloured bar pinned to the very top of the viewport, tracking
+ * Thin accent-colored bar pinned to the very top of the viewport, tracking
  * scroll progress through the page. Reads `--accent`, so it re-tints itself
  * automatically on co-branded pages (e.g. /crlab).
  */

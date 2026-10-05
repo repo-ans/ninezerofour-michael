@@ -3,6 +3,7 @@
 import { useEffect, type ReactNode } from "react";
 import { ReactLenis, useLenis } from "lenis/react";
 import { cancelFrame, frame, useReducedMotion } from "motion/react";
+import { usePathname } from "next/navigation";
 
 /**
  * Lenis smooth scrolling, with its RAF loop driven by Framer Motion's frame
@@ -35,6 +36,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
 
 function LenisRaf() {
   const lenis = useLenis();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!lenis) return;
@@ -42,6 +44,24 @@ function LenisRaf() {
     frame.update(update, true);
     return () => cancelFrame(update);
   }, [lenis]);
+
+  // Lenis caches the document height and only re-measures on window resize.
+  // After a client-side route change (or when images/fonts finish loading) the
+  // cached limit is stale, so scrolling stalls short of the real bottom. Re-measure
+  // whenever the body changes size or the route changes.
+  useEffect(() => {
+    if (!lenis) return;
+    lenis.resize();
+    const ro = new ResizeObserver(() => lenis.resize());
+    ro.observe(document.body);
+    const onLoad = () => lenis.resize();
+    window.addEventListener("load", onLoad);
+    void document.fonts?.ready.then(() => lenis.resize());
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("load", onLoad);
+    };
+  }, [lenis, pathname]);
 
   return null;
 }

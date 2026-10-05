@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SmartLink } from "@/components/ui/SmartLink";
-import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { Media } from "@/components/ui/Media";
@@ -24,16 +23,35 @@ const faqItems: AccordionItem[] = faqs.map((f) => ({
 export default function TeamPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Team"
-        title="Confidence creators, with credentials."
-        intro="A small studio by design. Everyone here specialises — so whatever you're booking, you're seeing someone who does it every day."
-      />
+      {/* Header: team intro on the left, leading-with-expertise on the right */}
+      <header className="border-b border-line pt-[calc(var(--nav-h)+3.5rem)] pb-14 md:pt-[calc(var(--nav-h)+5rem)] md:pb-20">
+        <Container>
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+            <Reveal group className="flex flex-col gap-5">
+              <RevealItem as="p" className="eyebrow">
+                Team
+              </RevealItem>
+              <SplitText
+                as="h1"
+                split="words"
+                effect="mask"
+                className="display-lg max-w-[16ch]"
+              >
+                Confidence creators, with credentials.
+              </SplitText>
+              <SplitText
+                as="p"
+                split="lines"
+                effect="fade"
+                duration={0.5}
+                className="max-w-[54ch] text-lg text-ink-soft"
+              >
+                A small studio by design. Everyone here specialises — so whatever
+                you&rsquo;re booking, you&rsquo;re seeing someone who does it every
+                day.
+              </SplitText>
+            </Reveal>
 
-      {/* Leading with passion */}
-      <section>
-        <Container className="py-20 md:py-28">
-          <div className="max-w-3xl">
             <Reveal group className="flex flex-col gap-5">
               <RevealItem as="p" className="eyebrow">
                 Leading with expertise
@@ -42,11 +60,11 @@ export default function TeamPage() {
                 as="h2"
                 split="words"
                 effect="rise"
-                className="display-md max-w-[16ch]"
+                className="display-lg max-w-[20ch]"
               >
                 Extensions, hair-loss solutions, and restoration — under one roof.
               </SplitText>
-              <RevealItem as="p" className="text-ink-soft">
+              <RevealItem as="p" className="text-lg text-ink-soft">
                 Nine Zero Four serves Ponte Vedra Beach and greater Jacksonville
                 with a team that trains continuously and holds current
                 certifications in their specialties. Weddings and events welcome.
@@ -54,7 +72,7 @@ export default function TeamPage() {
             </Reveal>
           </div>
         </Container>
-      </section>
+      </header>
 
       {/* Team grid */}
       <section className="bg-panel-2">
@@ -126,7 +144,7 @@ export default function TeamPage() {
               </SplitText>
               <RevealItem as="div" className="mt-4 hidden md:block">
                 <Media
-                  label="Colour brushes and shears in a back pocket"
+                  label="Color brushes and shears in a back pocket"
                   src="/team9faq.webp"
                   ratio="4 / 5"
                   sizes="(min-width: 768px) 33vw, 100vw"

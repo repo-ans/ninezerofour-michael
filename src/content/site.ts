@@ -16,7 +16,7 @@ export const site = {
   tagline: "Beauty Bar",
   /** Short positioning line — salon / credential-forward register. */
   descriptor:
-    "A Ponte Vedra Beach studio for advanced hair restoration — mesh and meshless hair-loss solutions, dimensional colour, and natural extensions",
+    "A Ponte Vedra Beach studio for advanced hair restoration — mesh and meshless hair-loss solutions, dimensional color, and natural extensions",
   /** External booking — Vagaro. Opens in a new tab. */
   bookUrl: "https://www.vagaro.com/ninezerofourbeautybar1",
   address: {

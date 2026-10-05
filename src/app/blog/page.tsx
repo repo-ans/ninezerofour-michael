@@ -9,7 +9,7 @@ import { posts } from "@/content/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Studio notes on hair health, colour, extensions, and restoration from the Nine Zero Four team.",
+    "Studio notes on hair health, color, extensions, and restoration from the Nine Zero Four team.",
 };
 
 function formatDate(iso: string) {

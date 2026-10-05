@@ -3,15 +3,15 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: "Who should I book with?",
-    a: "If you're here for thinning, shedding, or density concerns, start with Amanda for a Hair Loss / Thinning Consultation. For colour, book Kayla; for hand-tied or tape-in extensions, Kaydee. For K-tip extensions and mesh or meshless hair-loss solutions, book Renee — her chair is currently reserved for extension, hair-loss, and colour clients, so haircut-only or standalone blow-dry requests are best booked with another stylist. Not sure who to see? Choose any consultation and we'll route you to the right person before your appointment.",
+    a: "If you're here for thinning, shedding, or density concerns, start with Amanda for a Hair Loss / Thinning Consultation. For color, book Kayla; for hand-tied or tape-in extensions, Kaydee. For K-tip extensions and mesh or meshless hair-loss solutions, book Renee. Her chair is currently reserved for extension, hair-loss, and color clients, so haircut-only or standalone blow-dry requests are best booked with another stylist. Not sure who to see? Choose any consultation and we'll route you to the right person before your appointment.",
   },
   {
     q: "How do I book, and do I need a consultation first?",
-    a: "Most services can be booked directly online. Colour corrections, extensions, and all restoration programmes require a consultation first so we can assess your hair and quote accurately. Consultation fees are credited toward your first service.",
+    a: "Most services can be booked directly online. Color corrections, extensions, and all restoration programmes require a consultation first so we can assess your hair and quote accurately. Consultation fees are credited toward your first service.",
   },
   {
     q: "How far in advance are you booking?",
-    a: "New colour and extension clients are typically booking two to four weeks out; consultations are usually available within a week. Existing clients can pre-book their next visit at checkout.",
+    a: "New color and extension clients are typically booking two to four weeks out; consultations are usually available within a week. Existing clients can pre-book their next visit at checkout.",
   },
   {
     q: "What's the best way to reach the studio?",

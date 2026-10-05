@@ -38,7 +38,7 @@ export function ProductsSplit() {
               </SplitText>
           <RevealItem as="p" className="max-w-[46ch] text-inverse-ink/70">
             We stock a short, deliberate range — professional scalp care, bond
-            repair, and colour-safe daily products — and we only recommend what
+            repair, and color-safe daily products — and we only recommend what
             your assessment actually calls for.
           </RevealItem>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-inverse-ink/60">

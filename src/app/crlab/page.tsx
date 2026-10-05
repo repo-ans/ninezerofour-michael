@@ -2,25 +2,29 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Media } from "@/components/ui/Media";
-import { ButtonLink } from "@/components/ui/Button";
+import { SmartLink } from "@/components/ui/SmartLink";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { OversizedHero } from "@/components/hero/OversizedHero";
-import { CrlabMark, CoBrandLockup } from "@/components/brand/CrlabMark";
+import { CoBrandLockup } from "@/components/brand/CrlabMark";
 import { GhlForm } from "@/components/forms/GhlForm";
 import {
   protocol,
-  pillars,
-  journey,
-  spa,
-  premium,
-  closing,
+  intro,
+  made,
+  benefits,
+  solution,
+  processSteps,
+  video,
+  onco,
+  contactCards,
+  specialists,
 } from "@/content/protocol";
 
 export const metadata: Metadata = {
   title: "The CRLAB Protocol",
   description:
-    "One integrated journey for every hair and scalp concern — consultation, trichology, mesh, meshless & CNC hair systems, regenerative medicine, hair transplant, and Hair SPA. Nine Zero Four in partnership with CRLAB.",
+    "The CRLAB hair prosthetic system: a completely customized, Made in Italy solution for hair loss, from thinning to complete alopecia. Nine Zero Four in partnership with CRLAB.",
 };
 
 /* CRLAB co-brand tint, scoped to this page only. */
@@ -35,7 +39,7 @@ const coBrand = {
 
 const bookHref = "#crlab-contact";
 
-export default function HairRestorationPage() {
+export default function CrlabPage() {
   return (
     <div style={coBrand}>
       {/* HERO */}
@@ -51,139 +55,13 @@ export default function HairRestorationPage() {
         />
       </section>
 
-      {/* STATEMENT */}
+      {/* INTRO — hair loss of any type */}
       <section className="bg-panel">
         <Container className="py-24 md:py-32">
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-            <SplitText
-              as="h2"
-              split="words"
-              effect="rise"
-              className="display-md max-w-[15ch]"
-            >
-              {protocol.statement.lead}
-            </SplitText>
-            <SplitText
-              as="p"
-              split="lines"
-              effect="fade"
-              duration={0.5}
-              className="max-w-[46ch] self-end text-lg text-ink-soft"
-            >
-              {protocol.statement.body}
-            </SplitText>
-          </div>
-        </Container>
-      </section>
-
-      {/* PILLARS — Understand / Support / Restore */}
-      <section className="bg-panel-2">
-        <Container className="py-20 md:py-28">
-          <Reveal group className="flex flex-col gap-4">
-            <RevealItem as="p" className="eyebrow">
-              The method
-            </RevealItem>
-            <SplitText
-              as="h2"
-              split="words"
-              effect="rise"
-              className="display-md max-w-[18ch]"
-            >
-              Understand, support, restore.
-            </SplitText>
-          </Reveal>
-
-          <Reveal
-            group
-            className="mt-12 grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3"
-          >
-            {pillars.map((p) => (
-              <RevealItem
-                key={p.name}
-                className="flex flex-col gap-4 bg-panel p-8"
-              >
-                <span className="font-display text-2xl tracking-tight">
-                  {p.name}
-                </span>
-                <p className="text-sm text-ink-soft">{p.summary}</p>
-                <ul className="mt-auto space-y-2 pt-4 text-sm">
-                  {p.items.map((item) => (
-                    <li key={item} className="flex gap-2.5">
-                      <span aria-hidden className="text-accent">
-                        &mdash;
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </RevealItem>
-            ))}
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* THE JOURNEY */}
-      <section>
-        <Container className="py-24 md:py-32">
-          <div className="grid gap-12 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
-            <div className="flex flex-col gap-5 md:sticky md:top-28 md:self-start">
-              <Reveal group className="flex flex-col gap-5">
-                <RevealItem as="p" className="eyebrow">
-                  The journey
-                </RevealItem>
-                <SplitText
-                  as="h2"
-                  split="words"
-                  effect="rise"
-                  className="display-md max-w-[12ch]"
-                >
-                  Seven stages, one plan.
-                </SplitText>
-                <RevealItem as="p" className="max-w-[34ch] text-ink-soft">
-                  Every client moves through only the stages they need — the plan
-                  decides, not a menu.
-                </RevealItem>
-              </Reveal>
-            </div>
-
-            <Reveal group as="ol" className="border-t border-line">
-              {journey.map((s) => (
-                <RevealItem
-                  key={s.step}
-                  as="li"
-                  className="grid grid-cols-[2.5rem_1fr] gap-x-5 border-b border-line py-7 md:py-9"
-                >
-                  <span className="font-display text-sm text-accent">
-                    {s.step}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-xl tracking-tight md:text-2xl">
-                      {s.name}
-                    </h3>
-                    <p className="mt-2 max-w-[54ch] text-ink-soft">{s.copy}</p>
-                  </div>
-                </RevealItem>
-              ))}
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* HAIR SPA */}
-      <section className="bg-panel-2">
-        <Container className="py-20 md:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal>
-              <Media
-                label="The Hair SPA at Nine Zero Four"
-                src="/studio-floor.webp"
-                ratio="4 / 5"
-                className="rounded-md"
-              />
-            </Reveal>
             <Reveal group className="flex flex-col gap-5">
               <RevealItem as="p" className="eyebrow">
-                {spa.eyebrow}
+                {intro.eyebrow}
               </RevealItem>
               <SplitText
                 as="h2"
@@ -191,88 +69,216 @@ export default function HairRestorationPage() {
                 effect="rise"
                 className="display-md max-w-[16ch]"
               >
-                {spa.headline}
-              </SplitText>
-              <SplitText
-                as="p"
-                split="lines"
-                effect="fade"
-                duration={0.5}
-                className="max-w-[46ch] text-ink-soft"
-              >
-                {spa.body}
+                {intro.headline}
               </SplitText>
             </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* PREMIUM POSITIONING — CRLAB brown band */}
-      <section className="bg-inverse text-inverse-ink">
-        <Container className="py-24 md:py-32">
-          <Reveal group className="flex flex-col gap-8">
-            <SplitText
-              as="h2"
-              split="words"
-              effect="mask"
-              className="display-lg max-w-[18ch] text-inverse-ink"
-            >
-              {premium.headline}
-            </SplitText>
             <SplitText
               as="p"
               split="lines"
               effect="fade"
               duration={0.5}
-              className="max-w-[52ch] text-inverse-ink/70"
+              className="max-w-[46ch] self-end text-lg text-ink-soft"
             >
-              {premium.body}
+              {intro.body}
             </SplitText>
-            <RevealItem
-              as="ul"
-              className="flex flex-wrap gap-x-8 gap-y-2 pt-2 font-display text-xl md:text-2xl"
-            >
-              {premium.facets.map((f) => (
-                <li key={f}>{f}</li>
-              ))}
-            </RevealItem>
-            <RevealItem as="div" className="pt-8">
-              <CrlabMark tagline className="text-3xl text-inverse-ink" />
-            </RevealItem>
-          </Reveal>
+          </div>
         </Container>
       </section>
 
-      {/* EVERY DETAIL MATTERS */}
-      <section>
+      {/* MADE IN ITALY */}
+      <section className="bg-panel-2">
         <Container className="py-20 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal group className="order-2 flex flex-col gap-5 md:order-1">
+            <Reveal>
+              <Media
+                label="Custom hair prosthetic system, made in Italy"
+                src="/work-tape-in.webp"
+                ratio="4 / 5"
+                className="rounded-md"
+              />
+            </Reveal>
+            <Reveal group className="flex flex-col gap-5">
               <RevealItem as="p" className="eyebrow">
-                After the consultation
+                {made.eyebrow}
+              </RevealItem>
+              {made.body.map((p) => (
+                <RevealItem key={p} as="p" className="text-ink-soft">
+                  {p}
+                </RevealItem>
+              ))}
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* BENEFITS */}
+      <section>
+        <Container className="py-20 md:py-28">
+          <Reveal group className="flex flex-col gap-4">
+            <SplitText
+              as="h2"
+              split="words"
+              effect="rise"
+              className="display-md max-w-[22ch]"
+            >
+              {benefits.headline}
+            </SplitText>
+          </Reveal>
+          <Reveal
+            group
+            className="mt-12 grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3"
+          >
+            {benefits.points.map((point, i) => (
+              <RevealItem
+                key={point}
+                className="flex flex-col gap-3 bg-panel p-8"
+              >
+                <span className="font-display text-sm text-accent">
+                  0{i + 1}
+                </span>
+                <p className="font-display text-2xl tracking-tight">{point}</p>
+              </RevealItem>
+            ))}
+          </Reveal>
+          <SplitText
+            as="p"
+            split="lines"
+            effect="fade"
+            duration={0.5}
+            className="mt-10 max-w-[56ch] text-lg text-ink-soft"
+          >
+            {benefits.closing}
+          </SplitText>
+        </Container>
+      </section>
+
+      {/* YOUR NO. 1 SOLUTION */}
+      <section className="bg-panel-2">
+        <Container className="py-20 md:py-28">
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+            <Reveal group className="flex flex-col gap-5">
+              <RevealItem as="p" className="eyebrow">
+                {solution.eyebrow}
               </RevealItem>
               <SplitText
                 as="h2"
                 split="words"
                 effect="rise"
-                className="display-md max-w-[12ch]"
+                className="display-md max-w-[18ch]"
               >
-                {closing.detail.headline}
+                {solution.headline}
               </SplitText>
+              <RevealItem as="p" className="max-w-[46ch] text-ink-soft">
+                {solution.body}
+              </RevealItem>
+            </Reveal>
+            <Reveal>
+              <p className="max-w-[46ch] text-ink-soft md:pt-12">
+                {solution.transform}
+              </p>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* HOW IT IS MADE — the CRLAB process */}
+      <section>
+        <Container className="py-24 md:py-32">
+          <Reveal group className="flex flex-col gap-4">
+            <RevealItem as="p" className="eyebrow">
+              The CRLAB process
+            </RevealItem>
+            <SplitText
+              as="h2"
+              split="words"
+              effect="rise"
+              className="display-md max-w-[20ch]"
+            >
+              How the CRLAB hair prosthetic system is made for you.
+            </SplitText>
+            <RevealItem as="p" className="max-w-[52ch] text-ink-soft">
+              Our customized hair prosthesis is made specifically to your
+              individual requirements, in nine steps.
+            </RevealItem>
+          </Reveal>
+
+          <Reveal
+            group
+            as="ol"
+            className="mt-14 grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {processSteps.map((s, i) => (
+              <RevealItem
+                key={s.title}
+                as="li"
+                className="flex flex-col gap-3 bg-panel p-7"
+              >
+                <span className="font-display text-sm text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-display text-xl tracking-tight">
+                  {s.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-ink-soft">{s.copy}</p>
+              </RevealItem>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* VIDEO */}
+      <section className="bg-inverse text-inverse-ink">
+        <Container className="py-24 md:py-32">
+          <Reveal group className="flex flex-col gap-4">
+            <RevealItem as="p" className="eyebrow text-inverse-ink/60">
+              {video.eyebrow}
+            </RevealItem>
+            <SplitText
+              as="h2"
+              split="words"
+              effect="rise"
+              className="display-md max-w-[18ch] text-inverse-ink"
+            >
+              {video.headline}
+            </SplitText>
+          </Reveal>
+          <Reveal className="mt-12 aspect-video w-full overflow-hidden rounded-md bg-black">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+              title={video.title}
+              className="h-full w-full"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* ONCO HAIR */}
+      <section>
+        <Container className="py-20 md:py-28">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+            <Reveal group className="order-2 flex flex-col gap-5 md:order-1">
+              <RevealItem as="p" className="eyebrow">
+                {onco.eyebrow}
+              </RevealItem>
               <SplitText
-                as="p"
-                split="lines"
-                effect="fade"
-                duration={0.5}
-                className="max-w-[46ch] text-ink-soft"
+                as="h2"
+                split="words"
+                effect="rise"
+                className="display-md max-w-[18ch]"
               >
-                {closing.detail.body}
+                {onco.headline}
               </SplitText>
+              <RevealItem as="p" className="max-w-[46ch] text-ink-soft">
+                {onco.body}
+              </RevealItem>
             </Reveal>
             <Reveal className="order-1 md:order-2">
               <Media
-                label="The scalp-care wall, where take-home protocols begin"
-                src="/studio-scalp-wall.webp"
+                label="Supporting women undergoing chemotherapy"
+                src="/work-blonde-profile.webp"
                 ratio="4 / 5"
                 className="rounded-md"
               />
@@ -281,41 +287,80 @@ export default function HairRestorationPage() {
         </Container>
       </section>
 
-      {/* CTA + think ahead */}
-      <section className="bg-inverse text-inverse-ink">
-        <Container className="py-24 md:py-32">
-          <Reveal group className="flex flex-col gap-6">
-            <RevealItem as="div">
-              <CoBrandLockup className="text-inverse-ink/60" />
+      {/* HAIR LOSS SOLUTIONS — contact cards */}
+      <section className="bg-panel-2">
+        <Container className="py-20 md:py-28">
+          <Reveal group className="flex flex-col gap-4">
+            <RevealItem as="p" className="eyebrow">
+              Hair loss solutions for you
             </RevealItem>
             <SplitText
               as="h2"
               split="words"
-              effect="mask"
-              className="display-lg max-w-[14ch] text-inverse-ink"
+              effect="rise"
+              className="display-md max-w-[20ch]"
             >
-              {closing.cta.title}
+              Talk to a CRLAB expert.
             </SplitText>
-            <SplitText
-              as="p"
-              split="lines"
-              effect="fade"
-              duration={0.5}
-              className="max-w-[44ch] text-inverse-ink/70"
-            >
-              {closing.cta.body}
-            </SplitText>
-            <RevealItem
-              as="div"
-              className="flex flex-wrap items-center gap-5 pt-3"
-            >
-              <ButtonLink href={bookHref} variant="inverse">
-                Request a consultation
-              </ButtonLink>
-              <span className="font-script text-4xl leading-none text-inverse-ink/80">
-                {closing.cta.signoff}
-              </span>
+          </Reveal>
+          <Reveal
+            group
+            className="mt-12 grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3"
+          >
+            {contactCards.map((c) => (
+              <RevealItem
+                key={c.title}
+                className="flex flex-col gap-4 bg-panel p-8"
+              >
+                <h3 className="font-display text-2xl tracking-tight">
+                  {c.title}
+                </h3>
+                <p className="text-sm text-ink-soft">{c.copy}</p>
+                <div className="mt-auto pt-4">
+                  <SmartLink
+                    href={c.href}
+                    className="inline-flex items-center gap-2 border-b border-ink/30 pb-1 text-sm font-medium uppercase tracking-wide transition-colors hover:border-ink"
+                  >
+                    {c.cta} <span aria-hidden>&rarr;</span>
+                  </SmartLink>
+                </div>
+              </RevealItem>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* SPECIALISTS */}
+      <section>
+        <Container className="py-20 md:py-28">
+          <Reveal group className="flex flex-col gap-4">
+            <RevealItem as="p" className="eyebrow">
+              {specialists.eyebrow}
             </RevealItem>
+            <SplitText
+              as="h2"
+              split="words"
+              effect="rise"
+              className="display-md max-w-[22ch]"
+            >
+              {specialists.headline}
+            </SplitText>
+          </Reveal>
+          <Reveal
+            group
+            className="mt-12 grid gap-8 md:grid-cols-3 md:gap-6"
+          >
+            {specialists.services.map((s) => (
+              <RevealItem
+                key={s.title}
+                className="flex flex-col gap-4 border-t border-line pt-6"
+              >
+                <h3 className="font-display text-xl tracking-tight md:text-2xl">
+                  {s.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-ink-soft">{s.copy}</p>
+              </RevealItem>
+            ))}
           </Reveal>
         </Container>
       </section>
@@ -329,7 +374,7 @@ export default function HairRestorationPage() {
           <div className="mx-auto max-w-[640px]">
             <Reveal group className="flex flex-col gap-4 text-center">
               <RevealItem as="p" className="eyebrow">
-                {protocol.eyebrow}
+                <CoBrandLockup className="text-ink-soft" />
               </RevealItem>
               <SplitText
                 as="h2"
@@ -344,7 +389,7 @@ export default function HairRestorationPage() {
                 className="mx-auto max-w-[42ch] text-ink-soft"
               >
                 Leave your details and the studio will be in touch to book your
-                first assessment.
+                first assessment, in person or by video.
               </RevealItem>
             </Reveal>
 
@@ -357,6 +402,7 @@ export default function HairRestorationPage() {
           </div>
         </Container>
       </section>
+
     </div>
   );
 }

@@ -1,114 +1,139 @@
 /**
- * Content for the co-branded Nine Zero Four × CRLAB landing page (/crlab).
- * Adapted from the CRLAB "Positioning 2026 — The CRLAB Protocol" deck.
+ * Content for the co-branded Nine Zero Four × CRLAB page (/crlab).
+ * Copy taken from the CRLAB hair prosthetic system page and the CRLAB process
+ * supplied by the studio.
  */
 
 export const protocol = {
   eyebrow: "Nine Zero Four × CRLAB",
-  heroHeadline: "HAIR, RESTORED.",
+  heroHeadline: "CRLAB.",
   heroIntro:
-    "Where every hair and scalp concern becomes part of a personalised journey — from the first consultation to the most advanced restoration, delivered with expertise, empathy, and continuity.",
-  statement: {
-    lead: "This is not a menu of services. It is one integrated journey.",
-    body: "A single philosophy runs through every stage — because caring for hair means caring for the person.",
-  },
+    "The CRLAB hair prosthetic system is a completely customized, cutting-edge product. It has significantly changed the lives of thousands of people like you.",
 } as const;
 
-export type Pillar = {
-  name: string;
-  summary: string;
-  items: string[];
+export const intro = {
+  eyebrow: "Hair loss of any type",
+  headline:
+    "If you're experiencing hair loss of any type, this personalized solution can help — from simple thinning to complete alopecia.",
+  body: "Whatever you are, a man or a woman, whatever your age, with this system you can live without the worry. It's often the small things we take for granted that give us a sense of normality: walking by the sea, wearing a ponytail on a motorbike, or playing with your children.",
 };
 
-export const pillars: Pillar[] = [
+export const made = {
+  eyebrow: "Made in Italy",
+  body: [
+    "You can rest assured that our custom-made hair prosthetic system is produced in Italy. It is the result of continuous innovative research, a patented production process, and high ISO quality, environmental and worker-safety standards.",
+    "You'll have a fully customized product, where 3D technology, biomedical-grade materials and craftsmanship come together as a perfect expression of Made in Italy.",
+  ],
+};
+
+export const benefits = {
+  headline: "What's great about the CRLAB hair prosthetic system",
+  points: [
+    "No invasive procedures",
+    "Avoids the pain of surgery",
+    "No need to shave your own hair",
+  ],
+  closing:
+    "Thanks to its natural aesthetics and functionality, it allows you to live every moment of the day in complete freedom. It represents the excellence of Made in Italy.",
+};
+
+export const solution = {
+  eyebrow: "Your no. 1 solution for hair loss",
+  headline:
+    "We integrate natural-origin hair into the area where you're experiencing thinning or hair loss.",
+  body: "Because it is completely customized to your specific needs, it gives you a completely natural look.",
+  transform:
+    "Thousands of men and women have regained their self-confidence with the system. It can provide transformative results if you're suffering from alopecia, or from hair loss caused by hormonal changes, medical treatments, or other conditions.",
+};
+
+export const processSteps: { title: string; copy: string }[] = [
   {
-    name: "Understand",
-    summary:
-      "Every journey begins with listening. We assess the scalp, the hair, and the history behind them before anything else.",
-    items: ["Consultation & scalp analysis"],
+    title: "Private consultation and assessment",
+    copy: "The client meets privately with the specialist to discuss hair loss, scalp condition, goals, lifestyle, and whether the CRLAB system is appropriate.",
   },
   {
-    name: "Support",
-    summary:
-      "Where hair can be strengthened and maintained, we build a guided protocol around it.",
-    items: ["Hair care products & supplements", "Trichological treatments"],
+    title: "Customization and design",
+    copy: "They choose the appropriate color, texture, density, length, and overall look. The system is customized to blend naturally with the client's existing hair and desired style.",
   },
   {
-    name: "Restore",
-    summary:
-      "Where density needs to be rebuilt, the most advanced restoration solutions are on the same roof.",
-    items: [
-      "Mesh & meshless prosthetic systems (CNC)",
-      "Regenerative medicine",
-      "Hair transplantation",
-    ],
+    title: "Head/scalp measurements or scan",
+    copy: "A precise measurement or 3D scan of the head is taken so the cranial prosthesis can be made to fit the individual client.",
+  },
+  {
+    title: "Custom prosthesis creation",
+    copy: "The medical-grade scalp base is created and natural hair is individually incorporated to produce a realistic result.",
+  },
+  {
+    title: "Professional fitting and application",
+    copy: "Once ready, the prosthesis is professionally fitted and secured to the scalp using medical-grade adhesive. Existing hair does not necessarily need to be shaved.",
+  },
+  {
+    title: "Cutting, blending, and styling",
+    copy: "The specialist cuts, blends, colors or styles the system as needed so it looks integrated with the client's own hair.",
+  },
+  {
+    title: "Education and home care",
+    copy: "The client is shown how to care for the system and how to manage normal daily activities. The system is designed to stay on through sleeping, showering, and normal life.",
+  },
+  {
+    title: "Ongoing maintenance appointments",
+    copy: "Approximately every 3–4 weeks, the client returns to the salon. The specialist removes the system, cleans the scalp and prosthesis, performs maintenance, and professionally reapplies it.",
+  },
+  {
+    title: "Ongoing adjustments and replacement",
+    copy: "Over time, the system may need adjustments, hair additions, repairs, or eventual replacement, depending on wear and the client's needs.",
   },
 ];
 
-export type JourneyStage = {
-  step: string;
-  name: string;
-  copy: string;
+export const video = {
+  eyebrow: "Watch",
+  headline: "See the CRLAB system in motion.",
+  youtubeId: "ru5QKWrYwdo",
+  title: "Morgan's Story - Watch CRLab's CNC Treatment",
 };
 
-export const journey: JourneyStage[] = [
+export const onco = {
+  eyebrow: "Onco Hair",
+  headline: "Hair back for women undergoing chemotherapy.",
+  body: "CRLAB and the Associazione per il Policlinico Onlus have launched an initiative that gives hair back to women undergoing chemotherapy, supporting women fighting breast cancer.",
+};
+
+export const contactCards = [
   {
-    step: "01",
-    name: "Consultation",
-    copy: "A seated assessment with magnified imaging and a full history review. You leave with a written, staged plan — the first step to finding your image again.",
+    title: "Find your nearest center",
+    copy: "Let our experts find the best solution for you.",
+    cta: "Visit the studio",
+    href: "/book",
   },
   {
-    step: "02",
-    name: "Hair care products & supplements",
-    copy: "A short, deliberate range for scalp health and hair strength, prescribed only where your assessment calls for it.",
+    title: "Book a consultation",
+    copy: "Book a consultation with our experts to find out more about CRLAB solutions.",
+    cta: "Make an appointment",
+    href: "#crlab-contact",
   },
   {
-    step: "03",
-    name: "Trichological treatments",
-    copy: "In-studio protocols and last-generation devices that calm the scalp and create the conditions for stronger growth.",
-  },
-  {
-    step: "04",
-    name: "Mesh, meshless & CNC prosthetic systems",
-    copy: "A breathable, custom-built second skin of hair — through mesh, meshless, or CNC systems — for areas where density cannot be regrown, fitted, cut, and blended so the transition is invisible.",
-  },
-  {
-    step: "05",
-    name: "Regenerative medicine",
-    copy: "Advanced regenerative protocols that work with the follicle, used within a medically supervised plan.",
-  },
-  {
-    step: "06",
-    name: "Hair transplant",
-    copy: "When it is the right step, surgical restoration planned and staged against your baseline — never in isolation.",
-  },
-  {
-    step: "07",
-    name: "Hair SPA",
-    copy: "A new dimension of the journey: ritual scalp therapies that make care something you look forward to.",
+    title: "Book a video consultation",
+    copy: "A live video consultation with a CRLAB expert.",
+    cta: "Make an appointment",
+    href: "#crlab-contact",
   },
 ];
 
-export const spa = {
-  eyebrow: "CRLAB Hair SPA",
-  headline: "New rituals. New protocols. New experiences.",
-  body: "The Hair SPA extends the protocol beyond the chair — a considered, sensory reset for the scalp that keeps the whole journey sustainable.",
-};
-
-export const premium = {
-  headline: "Premium is not price. Premium is how people feel.",
-  body: "Every interaction should feel unmistakably ours — across the services we deliver, the experience around them, and the way we talk about both.",
-  facets: ["Services", "Experience", "Communication"],
-};
-
-export const closing = {
-  detail: {
-    headline: "Every detail matters",
-    body: "The experience continues after the consultation — in the plan you take home, the products on your shelf, and the follow-up that keeps the journey on track.",
-  },
-  cta: {
-    title: "Start with a consultation.",
-    body: "One assessment sets the direction for everything that follows. Book yours, and we'll build the plan together.",
-    signoff: "Think ahead.",
-  },
+export const specialists = {
+  eyebrow: "Hair loss solutions for you",
+  headline: "CRLAB, specialists in the well-being of your hair and scalp.",
+  services: [
+    {
+      title: "Trichology: scalp and hair care",
+      copy: "Trichology treatments care for your scalp and hair, using cutting-edge technology and a full range of laboratory-tested products made with high-quality ingredients.",
+    },
+    {
+      title: "Hair prosthetic system",
+      copy: "The ultimate answer for your hair loss: a patented solution that integrates natural hair into a discreet, comfortable base, for a naturally fuller look.",
+    },
+    {
+      title: "Hair transplant surgery",
+      copy: "Hair transplantation is recommended for those who have thinning hair and need coverage. The degree of thinning is assessed in relation to the donor area.",
+    },
+  ],
 };
