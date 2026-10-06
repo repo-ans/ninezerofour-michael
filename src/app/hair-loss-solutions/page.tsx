@@ -2,11 +2,9 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Media } from "@/components/ui/Media";
-import { SmartLink } from "@/components/ui/SmartLink";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { OversizedHero } from "@/components/hero/OversizedHero";
-import { CoBrandLockup } from "@/components/brand/CrlabMark";
 import { GhlForm } from "@/components/forms/GhlForm";
 import {
   protocol,
@@ -14,17 +12,18 @@ import {
   made,
   benefits,
   solution,
+  processIntro,
+  mesh,
+  meshless,
+  chooseOption,
   processSteps,
   video,
-  onco,
-  contactCards,
-  specialists,
 } from "@/content/protocol";
 
 export const metadata: Metadata = {
-  title: "The CRLAB Protocol",
+  title: "Hair Loss Solutions",
   description:
-    "The CRLAB hair prosthetic system: a completely customized, Made in Italy solution for hair loss, from thinning to complete alopecia. Nine Zero Four in partnership with CRLAB.",
+    "Customized, Made in Italy hair prosthetic systems, mesh and meshless solutions for hair loss, from thinning to complete alopecia, at Nine Zero Four in Ponte Vedra Beach.",
 };
 
 /* CRLAB co-brand tint, scoped to this page only. */
@@ -49,8 +48,8 @@ export default function CrlabPage() {
           intro={protocol.heroIntro}
           cta={{ label: "Book a consultation", href: bookHref }}
           headline={protocol.heroHeadline}
-          mediaLabel="A stylist working with a client at the chair"
-          mediaSrc="/work-blowdry.webp"
+          mediaLabel="Hair prosthetic system"
+          mediaSrc="/crlab/crlab_foto_capelli_2.jpg"
           mediaPosition="50% 35%"
         />
       </section>
@@ -67,7 +66,7 @@ export default function CrlabPage() {
                 as="h2"
                 split="words"
                 effect="rise"
-                className="display-md max-w-[16ch]"
+                className="display-md max-w-[18ch]"
               >
                 {intro.headline}
               </SplitText>
@@ -91,9 +90,9 @@ export default function CrlabPage() {
           <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <Reveal>
               <Media
-                label="Custom hair prosthetic system, made in Italy"
-                src="/work-tape-in.webp"
-                ratio="4 / 5"
+                label="Hair prosthetic system, made in Italy"
+                src="/crlab/IMG_7472-scaled-1-1024x683.jpg"
+                ratio="3 / 2"
                 className="rounded-md"
               />
             </Reveal>
@@ -111,7 +110,7 @@ export default function CrlabPage() {
         </Container>
       </section>
 
-      {/* BENEFITS */}
+      {/* BENEFITS — bullet points */}
       <section>
         <Container className="py-20 md:py-28">
           <Reveal group className="flex flex-col gap-4">
@@ -124,19 +123,10 @@ export default function CrlabPage() {
               {benefits.headline}
             </SplitText>
           </Reveal>
-          <Reveal
-            group
-            className="mt-12 grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3"
-          >
-            {benefits.points.map((point, i) => (
-              <RevealItem
-                key={point}
-                className="flex flex-col gap-3 bg-panel p-8"
-              >
-                <span className="font-display text-sm text-accent">
-                  0{i + 1}
-                </span>
-                <p className="font-display text-2xl tracking-tight">{point}</p>
+          <Reveal group as="ul" className="mt-10 flex list-disc flex-col gap-3 pl-6 text-lg marker:text-accent">
+            {benefits.points.map((point) => (
+              <RevealItem key={point} as="li" className="pl-1 text-ink">
+                {point}
               </RevealItem>
             ))}
           </Reveal>
@@ -181,12 +171,66 @@ export default function CrlabPage() {
         </Container>
       </section>
 
-      {/* HOW IT IS MADE — the CRLAB process */}
+      {/* MESH AND MESHLESS — other hair loss options */}
+      <section className="bg-panel">
+        <Container className="py-20 md:py-28">
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+            {[mesh, meshless].map((option) => (
+              <Reveal key={option.headline} group className="flex flex-col gap-5">
+                <RevealItem as="div">
+                  <Media
+                    label={option.imageLabel}
+                    src={option.image}
+                    ratio="4 / 3"
+                    className="rounded-md"
+                  />
+                </RevealItem>
+                <RevealItem as="p" className="eyebrow">
+                  {option.eyebrow}
+                </RevealItem>
+                <RevealItem as="h2" className="display-md max-w-[18ch]">
+                  {option.headline}
+                </RevealItem>
+                <RevealItem as="p" className="text-lg text-ink">
+                  {option.subtitle}
+                </RevealItem>
+                {option.body.map((p) => (
+                  <RevealItem key={p} as="p" className="text-ink-soft">
+                    {p}
+                  </RevealItem>
+                ))}
+                <RevealItem as="div" className="mt-2">
+                  <p className="font-semibold text-ink">Ideal for:</p>
+                  <ul className="mt-3 flex list-disc flex-col gap-2 pl-6 marker:text-accent">
+                    {option.ideal.map((item) => (
+                      <li key={item} className="pl-1 text-ink-soft">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </RevealItem>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal group className="mt-16 flex max-w-[60ch] flex-col gap-4 border-t border-line pt-10">
+            <RevealItem as="p" className="eyebrow">
+              {chooseOption.eyebrow}
+            </RevealItem>
+            {chooseOption.body.map((p) => (
+              <RevealItem key={p} as="p" className="text-ink-soft">
+                {p}
+              </RevealItem>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* HOW IT IS MADE — the CRLAB process, bullet points */}
       <section>
         <Container className="py-24 md:py-32">
           <Reveal group className="flex flex-col gap-4">
             <RevealItem as="p" className="eyebrow">
-              The CRLAB process
+              {processIntro.eyebrow}
             </RevealItem>
             <SplitText
               as="h2"
@@ -194,32 +238,18 @@ export default function CrlabPage() {
               effect="rise"
               className="display-md max-w-[20ch]"
             >
-              How the CRLAB hair prosthetic system is made for you.
+              {processIntro.headline}
             </SplitText>
-            <RevealItem as="p" className="max-w-[52ch] text-ink-soft">
-              Our customized hair prosthesis is made specifically to your
-              individual requirements, in nine steps.
+            <RevealItem as="p" className="max-w-[56ch] text-ink-soft">
+              {processIntro.body}
             </RevealItem>
           </Reveal>
 
-          <Reveal
-            group
-            as="ol"
-            className="mt-14 grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {processSteps.map((s, i) => (
-              <RevealItem
-                key={s.title}
-                as="li"
-                className="flex flex-col gap-3 bg-panel p-7"
-              >
-                <span className="font-display text-sm text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display text-xl tracking-tight">
-                  {s.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-ink-soft">{s.copy}</p>
+          <Reveal group as="ul" className="mt-12 flex list-disc flex-col gap-4 pl-6 marker:text-accent">
+            {processSteps.map((s) => (
+              <RevealItem key={s.title} as="li" className="max-w-[64ch] pl-1 text-ink-soft">
+                <span className="font-semibold text-ink">{s.title}.</span>{" "}
+                {s.copy}
               </RevealItem>
             ))}
           </Reveal>
@@ -255,126 +285,16 @@ export default function CrlabPage() {
         </Container>
       </section>
 
-      {/* ONCO HAIR */}
-      <section>
-        <Container className="py-20 md:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal group className="order-2 flex flex-col gap-5 md:order-1">
-              <RevealItem as="p" className="eyebrow">
-                {onco.eyebrow}
-              </RevealItem>
-              <SplitText
-                as="h2"
-                split="words"
-                effect="rise"
-                className="display-md max-w-[18ch]"
-              >
-                {onco.headline}
-              </SplitText>
-              <RevealItem as="p" className="max-w-[46ch] text-ink-soft">
-                {onco.body}
-              </RevealItem>
-            </Reveal>
-            <Reveal className="order-1 md:order-2">
-              <Media
-                label="Supporting women undergoing chemotherapy"
-                src="/work-blonde-profile.webp"
-                ratio="4 / 5"
-                className="rounded-md"
-              />
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* HAIR LOSS SOLUTIONS — contact cards */}
-      <section className="bg-panel-2">
-        <Container className="py-20 md:py-28">
-          <Reveal group className="flex flex-col gap-4">
-            <RevealItem as="p" className="eyebrow">
-              Hair loss solutions for you
-            </RevealItem>
-            <SplitText
-              as="h2"
-              split="words"
-              effect="rise"
-              className="display-md max-w-[20ch]"
-            >
-              Talk to a CRLAB expert.
-            </SplitText>
-          </Reveal>
-          <Reveal
-            group
-            className="mt-12 grid gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3"
-          >
-            {contactCards.map((c) => (
-              <RevealItem
-                key={c.title}
-                className="flex flex-col gap-4 bg-panel p-8"
-              >
-                <h3 className="font-display text-2xl tracking-tight">
-                  {c.title}
-                </h3>
-                <p className="text-sm text-ink-soft">{c.copy}</p>
-                <div className="mt-auto pt-4">
-                  <SmartLink
-                    href={c.href}
-                    className="inline-flex items-center gap-2 border-b border-ink/30 pb-1 text-sm font-medium uppercase tracking-wide transition-colors hover:border-ink"
-                  >
-                    {c.cta} <span aria-hidden>&rarr;</span>
-                  </SmartLink>
-                </div>
-              </RevealItem>
-            ))}
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* SPECIALISTS */}
-      <section>
-        <Container className="py-20 md:py-28">
-          <Reveal group className="flex flex-col gap-4">
-            <RevealItem as="p" className="eyebrow">
-              {specialists.eyebrow}
-            </RevealItem>
-            <SplitText
-              as="h2"
-              split="words"
-              effect="rise"
-              className="display-md max-w-[22ch]"
-            >
-              {specialists.headline}
-            </SplitText>
-          </Reveal>
-          <Reveal
-            group
-            className="mt-12 grid gap-8 md:grid-cols-3 md:gap-6"
-          >
-            {specialists.services.map((s) => (
-              <RevealItem
-                key={s.title}
-                className="flex flex-col gap-4 border-t border-line pt-6"
-              >
-                <h3 className="font-display text-xl tracking-tight md:text-2xl">
-                  {s.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-ink-soft">{s.copy}</p>
-              </RevealItem>
-            ))}
-          </Reveal>
-        </Container>
-      </section>
-
       {/* CONTACT — GHL form */}
       <section
         id="crlab-contact"
-        className="scroll-mt-24 bg-panel-2 md:scroll-mt-28"
+        className="scroll-mt-24 bg-panel md:scroll-mt-28"
       >
         <Container className="py-20 md:py-28">
           <div className="mx-auto max-w-[640px]">
             <Reveal group className="flex flex-col gap-4 text-center">
               <RevealItem as="p" className="eyebrow">
-                <CoBrandLockup className="text-ink-soft" />
+                Nine Zero Four
               </RevealItem>
               <SplitText
                 as="h2"
@@ -396,13 +316,12 @@ export default function CrlabPage() {
             <Reveal className="mt-10">
               <GhlForm
                 formId="5TPCGA4FcAmxkPV6Cito"
-                title="Nine Zero Four × CRLAB — Contact Us"
+                title="Nine Zero Four — Hair Loss Solutions Contact"
               />
             </Reveal>
           </div>
         </Container>
       </section>
-
     </div>
   );
 }

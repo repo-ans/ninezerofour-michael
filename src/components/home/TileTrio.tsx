@@ -8,7 +8,7 @@ const tiles = [
     label: "Hair Loss Solutions",
     media: "The scalp-care wall at Nine Zero Four",
     image: "/studio-scalp-wall.webp",
-    copy: "Mesh and meshless integration, CR Lab hair systems, and scalp pigmentation — starting with a hair loss / thinning consultation.",
+    copy: "Mesh and meshless integration, hair prosthetic systems, and scalp pigmentation — starting with a hair loss / thinning consultation.",
     href: "/services",
   },
   {

@@ -63,7 +63,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "hairloss",
     label: "Hair Loss Services",
-    blurb: "Mesh and meshless integration, CR Lab hair systems, and scalp pigmentation for thinning hair.",
+    blurb: "Mesh and meshless integration, hair prosthetic systems, and scalp pigmentation for thinning hair.",
     media: "An extension bond at the crown",
     image: "/work-extension-detail.webp",
   },

@@ -1,33 +1,35 @@
 /**
  * Content for the co-branded Nine Zero Four × CRLAB page (/crlab).
- * Copy taken from the CRLAB hair prosthetic system page and the CRLAB process
- * supplied by the studio.
+ * Copy and pictures taken from the CRLAB hair prosthetic system page
+ * (crlab.com, used with CRLAB's permission), plus the studio's own process.
  */
 
 export const protocol = {
-  eyebrow: "Nine Zero Four × CRLAB",
-  heroHeadline: "CRLAB.",
+  eyebrow: "Nine Zero Four",
+  heroHeadline: "Hair loss solutions.",
   heroIntro:
-    "The CRLAB hair prosthetic system is a completely customized, cutting-edge product. It has significantly changed the lives of thousands of people like you.",
+    "Our hair prosthetic system is a completely customized, cutting-edge product.",
 } as const;
 
 export const intro = {
   eyebrow: "Hair loss of any type",
   headline:
-    "If you're experiencing hair loss of any type, this personalized solution can help — from simple thinning to complete alopecia.",
-  body: "Whatever you are, a man or a woman, whatever your age, with this system you can live without the worry. It's often the small things we take for granted that give us a sense of normality: walking by the sea, wearing a ponytail on a motorbike, or playing with your children.",
+    "If you're experiencing hair loss of any type, then this totally personalized solution can help. From simple thinning to complete alopecia.",
+  body: "Whether you're a man or a woman. Whatever your age. With this system you can live your life free of worry. It's often the little things we take for granted that give us a sense of normality. Like playing sports, sleeping, taking a shower, walking by the sea, wearing a helmet on a motorbike or playing with our children.",
 };
 
 export const made = {
   eyebrow: "Made in Italy",
   body: [
-    "You can rest assured that our custom-made hair prosthetic system is produced in Italy. It is the result of continuous innovative research, a patented production process, and high ISO quality, environmental and worker-safety standards.",
-    "You'll have a fully customized product, where 3D technology, biomedical-grade materials and craftsmanship come together as a perfect expression of Made in Italy.",
+    "You can rest assured that our custom-made hair prosthetic system, produced in Italy, is the result of continuous innovative research. It's made using a patented production process. And it's ethically produced and certified according to high ISO quality, environmental, and worker safety standards.",
+    "You'll have a fully customized product. Where 3D technology, biomedical grade materials and craftsmanship come together as a perfect expression of 'Made in Italy'.",
+    "Our hair prosthetic system is a non-invasive, effective solution to your hair loss problems.",
+    "Thousands of men and women like you have regained their self-confidence with our hair prosthetic system.",
   ],
 };
 
 export const benefits = {
-  headline: "What's great about the CRLAB hair prosthetic system",
+  headline: "What's great about our hair prosthetic system",
   points: [
     "No invasive procedures",
     "Avoids the pain of surgery",
@@ -38,18 +40,72 @@ export const benefits = {
 };
 
 export const solution = {
-  eyebrow: "Your no. 1 solution for hair loss",
+  eyebrow: "Your No. 1 solution for hair loss",
   headline:
-    "We integrate natural-origin hair into the area where you're experiencing thinning or hair loss.",
-  body: "Because it is completely customized to your specific needs, it gives you a completely natural look.",
+    "Our hair prosthetic system. Your No. 1 solution for hair loss.",
+  body: "We integrate natural virgin hair into the area where you're experiencing thinning or hair loss. And because it's completely customized to your specific needs, it gives you a completely natural look.",
   transform:
-    "Thousands of men and women have regained their self-confidence with the system. It can provide transformative results if you're suffering from alopecia, or from hair loss caused by hormonal changes, medical treatments, or other conditions.",
+    "It can provide you with transformative results if you're suffering from any form of temporary or permanent alopecia. Including androgenetic, areata, universalis and scarring (frontal fibrosing, lichen) alopecia. As well as hair loss from trauma if you've undergone chemotherapy or radiotherapy treatments.",
+};
+
+/** Hair loss options beyond CRLAB: mesh and meshless (client-supplied copy). */
+export const mesh = {
+  eyebrow: "Mesh and meshless",
+  image: "/mesh.jpeg",
+  imageLabel: "Mesh hair extension foundation at the scalp",
+  headline: "Mesh Hair Extensions",
+  subtitle: "Beautiful Coverage. Natural-Looking Volume. More Confidence.",
+  body: [
+    "Mesh hair extensions are designed for clients experiencing thinning hair or areas where traditional extensions may not provide enough coverage. A lightweight, breathable mesh foundation allows additional hair to be strategically integrated and blended with your natural hair.",
+    "The result is fuller, more dimensional hair with coverage exactly where you need it. Each system is customized to complement your natural color, texture, density, and desired style for a seamless, natural-looking finish.",
+  ],
+  ideal: [
+    "Increased volume and density",
+    "Coverage for thinning or sparse areas",
+    "A fuller, more complete hairstyle",
+    "Customized color and texture",
+    "A natural-looking alternative when traditional extensions aren't enough",
+  ],
+};
+
+export const meshless = {
+  eyebrow: "Meshless",
+  image: "/meshless.jpeg",
+  imageLabel: "Meshless weft detail and key benefits",
+  headline: "Meshless Hair Extensions",
+  subtitle: "Lightweight Volume Without a Full Mesh Foundation",
+  body: [
+    "Meshless hair extensions offer another customized solution for clients who want additional volume, density, and coverage without the use of a full mesh foundation.",
+    "The added hair is strategically integrated with your natural hair based on where you need fullness most. This creates a lightweight, comfortable result that moves naturally and blends beautifully with your own hair.",
+  ],
+  ideal: [
+    "Fuller, thicker-looking hair",
+    "Additional density in thinning areas",
+    "Strategic coverage where it's needed most",
+    "A lightweight hair-enhancement option",
+    "Natural movement and styling versatility",
+    "A customized alternative to traditional extensions",
+  ],
+};
+
+export const chooseOption = {
+  eyebrow: "Which option is right for you?",
+  body: [
+    "Every client's hair loss, thinning pattern, lifestyle, and desired result is different. During your consultation, we'll evaluate your natural hair and discuss your goals to determine whether mesh, meshless, traditional extensions, or another hair restoration solution is the best option for you.",
+    "The goal isn't simply to add hair. It's to create a solution that looks natural, feels comfortable, and helps you feel like yourself again.",
+  ],
+};
+
+export const processIntro = {
+  eyebrow: "The process",
+  headline: "How our hair prosthetic system is made for you.",
+  body: "Our customized hair prosthesis gives you customized hair replacement, made specifically to your individual requirements. The creation process involves 39 steps. It begins with an exact reproduction of your head using 3D scanning, identifying the precise area where you need hair replacement.",
 };
 
 export const processSteps: { title: string; copy: string }[] = [
   {
     title: "Private consultation and assessment",
-    copy: "The client meets privately with the specialist to discuss hair loss, scalp condition, goals, lifestyle, and whether the CRLAB system is appropriate.",
+    copy: "The client meets privately with the specialist to discuss hair loss, scalp condition, goals, lifestyle, and whether the prosthetic system is appropriate.",
   },
   {
     title: "Customization and design",
@@ -87,53 +143,8 @@ export const processSteps: { title: string; copy: string }[] = [
 
 export const video = {
   eyebrow: "Watch",
-  headline: "See the CRLAB system in motion.",
+  headline: "See the system in motion.",
   youtubeId: "ru5QKWrYwdo",
   title: "Morgan's Story - Watch CRLab's CNC Treatment",
 };
 
-export const onco = {
-  eyebrow: "Onco Hair",
-  headline: "Hair back for women undergoing chemotherapy.",
-  body: "CRLAB and the Associazione per il Policlinico Onlus have launched an initiative that gives hair back to women undergoing chemotherapy, supporting women fighting breast cancer.",
-};
-
-export const contactCards = [
-  {
-    title: "Find your nearest center",
-    copy: "Let our experts find the best solution for you.",
-    cta: "Visit the studio",
-    href: "/book",
-  },
-  {
-    title: "Book a consultation",
-    copy: "Book a consultation with our experts to find out more about CRLAB solutions.",
-    cta: "Make an appointment",
-    href: "#crlab-contact",
-  },
-  {
-    title: "Book a video consultation",
-    copy: "A live video consultation with a CRLAB expert.",
-    cta: "Make an appointment",
-    href: "#crlab-contact",
-  },
-];
-
-export const specialists = {
-  eyebrow: "Hair loss solutions for you",
-  headline: "CRLAB, specialists in the well-being of your hair and scalp.",
-  services: [
-    {
-      title: "Trichology: scalp and hair care",
-      copy: "Trichology treatments care for your scalp and hair, using cutting-edge technology and a full range of laboratory-tested products made with high-quality ingredients.",
-    },
-    {
-      title: "Hair prosthetic system",
-      copy: "The ultimate answer for your hair loss: a patented solution that integrates natural hair into a discreet, comfortable base, for a naturally fuller look.",
-    },
-    {
-      title: "Hair transplant surgery",
-      copy: "Hair transplantation is recommended for those who have thinning hair and need coverage. The degree of thinning is assessed in relation to the donor area.",
-    },
-  ],
-};
