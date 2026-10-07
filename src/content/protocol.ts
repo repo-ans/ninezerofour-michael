@@ -70,7 +70,7 @@ export const mesh = {
 
 export const meshless = {
   eyebrow: "Meshless",
-  image: "/meshless.jpeg",
+  image: "/meshless.jpg",
   imageLabel: "Meshless weft detail and key benefits",
   headline: "Meshless Hair Extensions",
   subtitle: "Lightweight Volume Without a Full Mesh Foundation",

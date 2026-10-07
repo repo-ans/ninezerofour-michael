@@ -182,7 +182,7 @@ export default function CrlabPage() {
                     label={option.imageLabel}
                     src={option.image}
                     ratio="4 / 3"
-                    className="rounded-md"
+                    className="rounded-md object-contain"
                   />
                 </RevealItem>
                 <RevealItem as="p" className="eyebrow">
