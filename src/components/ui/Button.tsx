@@ -9,7 +9,7 @@ import { isExternal } from "@/lib/href";
 const MotionLink = motion.create(Link);
 
 type Variant = "solid" | "outline" | "ghost" | "inverse";
-type Size = "sm" | "md";
+type Size = "sm" | "md" | "lg";
 
 const base =
   "group relative isolate inline-flex items-center justify-center gap-2 overflow-hidden font-medium tracking-[0.16em] whitespace-nowrap uppercase transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50";
@@ -17,6 +17,8 @@ const base =
 const sizes: Record<Size, string> = {
   sm: "h-9 px-5 text-[0.68rem]",
   md: "h-12 px-8 text-[0.72rem]",
+  // Big, unmissable CTA — the hero and closing bands use this.
+  lg: "h-14 px-10 text-[0.78rem] font-semibold",
 };
 
 type Shape = "soft" | "pill";
@@ -70,7 +72,7 @@ function Sheen() {
 
 function Label({ children }: { children: ReactNode }) {
   return (
-    <span className="relative z-10 inline-flex items-center gap-2">
+    <span className="relative z-10 inline-flex items-center gap-2 text-[15px] font-bold">
       {children}
     </span>
   );

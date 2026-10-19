@@ -6,7 +6,7 @@ import { Media } from "@/components/ui/Media";
 const results = [
   {
     src: "/result-colour.webp",
-    label: "Before and after: a color refresh — tone, shine, and movement",
+    label: "Before and after: a color refresh, tone, shine, and movement",
     caption: "Color & shine",
   },
   {

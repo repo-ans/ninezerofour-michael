@@ -59,7 +59,7 @@ export function PricingAccordion() {
               </SplitText>
           <RevealItem as="p" className="text-ink-soft">
             Prices below reflect our current menu. Your exact quote is confirmed at
-            consultation or before service — never at checkout.
+            consultation or before service, never at checkout.
           </RevealItem>
           <RevealItem as="div" className="pt-1">
             <ButtonLink href={site.bookUrl} size="sm">

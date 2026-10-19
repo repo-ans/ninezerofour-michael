@@ -56,7 +56,7 @@ export function BookingForm({
             name="service"
             defaultValue={presetService ?? ""}
             options={[
-              { value: "", label: "Not sure yet — recommend for me" },
+              { value: "", label: "Not sure yet, recommend for me" },
               ...services.map((s) => ({ value: s.slug, label: s.name })),
             ]}
           />
@@ -66,7 +66,7 @@ export function BookingForm({
             defaultValue={presetStylist ?? ""}
             options={[
               { value: "", label: "No preference" },
-              ...team.map((m) => ({ value: m.slug, label: `${m.name} — ${m.role}` })),
+              ...team.map((m) => ({ value: m.slug, label: `${m.name} (${m.role})` })),
             ]}
           />
         </>
@@ -94,7 +94,7 @@ export function BookingForm({
         {isCareers ? "Submit application" : "Request appointment"}
       </button>
       <p className="text-xs text-ink-soft">
-        Submitting sends a request only — a team member confirms every booking.
+        Submitting sends a request only; a team member confirms every booking.
       </p>
     </form>
   );

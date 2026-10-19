@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Usage Data:</strong> IP address, browser type, pages visited,
-            and — where enabled — marketing identifiers passed through URL
+            and, where enabled, marketing identifiers passed through URL
             parameters (such as UTM parameters, Google Click ID, or Facebook
             Click ID).
           </li>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
           for marketing or promotional purposes. Information sharing to
           subcontractors in support services, such as customer service, is
           permitted. All other use case categories exclude text messaging
-          originator opt-in data and consent — this information will not be
+          originator opt-in data and consent. This information will not be
           shared with any third parties.
         </LegalCallout>
       </LegalSection>

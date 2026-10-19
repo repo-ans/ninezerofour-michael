@@ -8,7 +8,7 @@ import { Reveal, RevealItem } from "@/components/motion/Reveal";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Extensions, haircuts, color services, and hair loss services at Nine Zero Four Beauty Bar in Ponte Vedra Beach.",
+    "Extensions, haircuts, color services, and hair loss services at Nine Zero Four Hair Salon in Ponte Vedra Beach.",
 };
 
 const process = [
@@ -20,7 +20,7 @@ const process = [
   {
     step: "02",
     title: "Plan",
-    body: "We stage the work — what happens first, what follows, and the realistic timeline.",
+    body: "We stage the work: what happens first, what follows, and the realistic timeline.",
   },
   {
     step: "03",
@@ -37,6 +37,17 @@ export default function ServicesPage() {
         title="Every service begins with a consultation."
         intro="Hover a category to preview it, or open any service for the full description and pricing."
       />
+
+      <section className="border-y border-line bg-accent-soft/60">
+        <Container className="py-4">
+          <Reveal>
+            <p className="text-center text-sm font-medium text-ink">
+              Prices shown are starting points. Your exact quote is confirmed at
+              consultation or before service begins.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
 
       <Container className="py-16 md:py-24">
         <ServicesExplorer />

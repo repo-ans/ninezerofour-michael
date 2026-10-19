@@ -17,7 +17,7 @@ export function NewsletterForm() {
     >
       {done ? (
         <p className="text-sm text-inverse-ink/80" role="status">
-          Thank you — you&rsquo;re on the list.
+          Thank you, you&rsquo;re on the list.
         </p>
       ) : (
         <div className="flex max-w-sm items-center border-b border-inverse-line focus-within:border-inverse-ink">

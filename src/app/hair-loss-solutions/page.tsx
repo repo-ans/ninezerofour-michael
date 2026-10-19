@@ -316,7 +316,7 @@ export default function CrlabPage() {
             <Reveal className="mt-10">
               <GhlForm
                 formId="5TPCGA4FcAmxkPV6Cito"
-                title="Nine Zero Four — Hair Loss Solutions Contact"
+                title="Nine Zero Four Hair Loss Solutions Contact"
               />
             </Reveal>
           </div>

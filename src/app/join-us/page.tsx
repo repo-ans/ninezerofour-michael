@@ -10,13 +10,13 @@ import { CtaBand } from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "Join Us",
   description:
-    "Apprenticeship and associate openings at Nine Zero Four Beauty Bar — a structured pathway from apprentice to senior stylist.",
+    "Apprenticeship and associate openings at Nine Zero Four Hair Salon: a structured pathway from apprentice to senior stylist.",
 };
 
 const pillars = [
   {
     title: "Mentored apprenticeship",
-    body: "Structured months alongside a senior stylist — not fetching towels. You build real skills on a defined curriculum.",
+    body: "Structured months alongside a senior stylist, not fetching towels. You build real skills on a defined curriculum.",
   },
   {
     title: "Paid training days",
@@ -32,7 +32,7 @@ const pillars = [
   },
   {
     title: "Specialty education",
-    body: "Hands-on training in mesh and meshless hair-loss systems and K-tip extensions, taught in-studio by our specialist — skills that meaningfully raise your ceiling as the industry moves this way.",
+    body: "Hands-on training in mesh and meshless hair-loss systems and K-tip extensions, taught in-studio by our specialist. These skills meaningfully raise your ceiling as the industry moves this way.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function JoinUsPage() {
       <PageHeader
         eyebrow="Join Us"
         title="Train seriously. Build a real career in hair."
-        intro="We're always meeting stylists who want more than a chair — a curriculum, mentorship, and a defined path forward."
+        intro="We're always meeting stylists who want more than a chair: a curriculum, mentorship, and a defined path forward."
       >
         <ButtonLink href="/book?intent=careers">Apply now</ButtonLink>
       </PageHeader>
@@ -64,7 +64,7 @@ export default function JoinUsPage() {
               </SplitText>
               <RevealItem as="p" className="text-ink-soft">
                 We keep the team compact so every person gets attention, mentorship,
-                and room to specialise. If you care about craft and want to work
+                and room to specialize. If you care about craft and want to work
                 somewhere methodical, we should talk.
               </RevealItem>
               <RevealItem as="div" className="pt-1">

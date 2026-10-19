@@ -24,7 +24,7 @@ export function ServiceCard({
     <motion.div
       role="button"
       tabIndex={0}
-      aria-label={`${service.name} — view details`}
+      aria-label={`View details for ${service.name}`}
       onClick={() => onOpen(service)}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {

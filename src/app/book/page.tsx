@@ -9,7 +9,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Book Now",
   description:
-    "Book an appointment at Nine Zero Four Beauty Bar online through Vagaro, or send the studio a message.",
+    "Book an appointment at Nine Zero Four Hair Salon online through Vagaro, or send the studio a message.",
 };
 
 export default async function BookPage({ searchParams }: PageProps<"/book">) {
@@ -26,7 +26,7 @@ export default async function BookPage({ searchParams }: PageProps<"/book">) {
         intro={
           isCareers
             ? "Tell us where you are in your career and what you want to build. We read every application."
-            : "Appointments are booked online through Vagaro. For anything else — a question, a detailed request — send the studio a message below."
+            : "Appointments are booked online through Vagaro. For anything else, a question or a detailed request, send the studio a message below."
         }
       />
 
@@ -42,7 +42,7 @@ export default async function BookPage({ searchParams }: PageProps<"/book">) {
                   Book online
                 </p>
                 <p className="max-w-[48ch] text-sm text-ink-soft">
-                  Live availability, instant confirmation, and a card on file —
+                  Live availability, instant confirmation, and a card on file,
                   all handled through Vagaro.
                 </p>
               </RevealItem>

@@ -28,7 +28,7 @@ export default function BlogPage() {
       <PageHeader
         eyebrow="Blog"
         title="Notes from the studio."
-        intro="Plain-language writing on what we see behind the chair — and how to make the results last."
+        intro="Plain-language writing on what we see behind the chair, and how to make the results last."
       />
 
       <Container className="py-16 md:py-24">

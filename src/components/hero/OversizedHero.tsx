@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { Media } from "@/components/ui/Media";
-import { SmartLink } from "@/components/ui/SmartLink";
+import { ButtonLink } from "@/components/ui/Button";
 import { SplitText } from "@/components/motion/SplitText";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/cn";
@@ -65,18 +65,12 @@ export function OversizedHero({
           {intro}
         </p>
         {cta ? (
-          <SmartLink
-            href={cta.href}
-            className="group mt-6 inline-flex w-fit items-center gap-2 border-b border-paper/40 pb-1 text-sm font-medium tracking-wide uppercase transition-colors hover:border-paper"
-          >
+          <ButtonLink href={cta.href} variant="inverse" size="lg" className="mt-7 w-fit">
             {cta.label}
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-1"
-            >
+            <span aria-hidden className="transition-transform group-hover:translate-x-1">
               &rarr;
             </span>
-          </SmartLink>
+          </ButtonLink>
         ) : null}
       </motion.div>
 

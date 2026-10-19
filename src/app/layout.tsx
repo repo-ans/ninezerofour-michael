@@ -40,8 +40,8 @@ const script = Mrs_Saint_Delafield({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ninezerofourbeautybar.com"),
   title: {
-    default: `${site.name} ${site.tagline} — Hair Restoration, Color & Extensions`,
-    template: `%s — ${site.name} ${site.tagline}`,
+    default: `${site.name} ${site.tagline} | Hair Restoration, Color & Extensions`,
+    template: `%s | ${site.name} ${site.tagline}`,
   },
   description: site.descriptor,
   openGraph: {

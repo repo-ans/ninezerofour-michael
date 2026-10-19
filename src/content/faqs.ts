@@ -19,7 +19,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Why is pricing shown as 'from'?",
-    a: "Each stylist sets pricing by their level and the time your hair needs. The 'from' figure is a starting point — you'll get an exact quote at your consultation or before service begins, never a surprise at checkout.",
+    a: "Each stylist sets pricing by their level and the time your hair needs. The 'from' figure is a starting point. You'll get an exact quote at your consultation or before service begins, never a surprise at checkout.",
   },
   {
     q: "What is your cancellation policy?",

@@ -12,7 +12,7 @@ import { faqs } from "@/content/faqs";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Meet Renee and Amanda — the stylists behind Nine Zero Four's color and extensions.",
+    "Meet Renee and Amanda, the stylists behind Nine Zero Four's color and extensions.",
 };
 
 const faqItems: AccordionItem[] = faqs.map((f) => ({
@@ -46,7 +46,7 @@ export default function TeamPage() {
                 duration={0.5}
                 className="max-w-[54ch] text-lg text-ink-soft"
               >
-                A small studio by design. Everyone here specialises — so whatever
+                A small studio by design. Everyone here specializes, so whatever
                 you&rsquo;re booking, you&rsquo;re seeing someone who does it every
                 day.
               </SplitText>
@@ -62,7 +62,7 @@ export default function TeamPage() {
                 effect="rise"
                 className="display-lg max-w-[20ch]"
               >
-                Extensions, hair-loss solutions, and restoration — under one roof.
+                Extensions, hair-loss solutions, and restoration, under one roof.
               </SplitText>
               <RevealItem as="p" className="text-lg text-ink-soft">
                 Nine Zero Four serves Ponte Vedra Beach and greater Jacksonville

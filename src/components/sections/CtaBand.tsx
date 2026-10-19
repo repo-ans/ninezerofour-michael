@@ -41,13 +41,14 @@ export function CtaBand({
             {body}
           </SplitText>
           <RevealItem as="div" className="flex flex-wrap gap-3 pt-2">
-            <ButtonLink href={ctaHref} variant="inverse">
+            <ButtonLink href={ctaHref} variant="inverse" size="lg">
               {ctaLabel}
             </ButtonLink>
             {secondaryLabel && secondaryHref ? (
               <ButtonLink
                 href={secondaryHref}
                 variant="outline"
+                size="lg"
                 className="border-inverse-ink/30 text-inverse-ink hover:border-inverse-ink hover:bg-inverse-ink/5"
               >
                 {secondaryLabel}

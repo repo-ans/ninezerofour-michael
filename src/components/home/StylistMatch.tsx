@@ -35,7 +35,7 @@ export function StylistMatch() {
             <RevealItem as="p" className="text-ink-soft">
               Each of our specialists sets pricing by their level and the time
               your hair genuinely needs. That&rsquo;s why every price is shown as
-              a starting point — you receive an exact quote at your consultation
+              a starting point. You receive an exact quote at your consultation
               or before service begins, never a surprise at checkout.
             </RevealItem>
             <RevealItem as="p" className="text-ink-soft">

@@ -38,8 +38,8 @@ export default function TermsPage() {
 
       <LegalSection n={3} title="Intellectual Property">
         <p>
-          All content on this website — including text, graphics, logos, and the{" "}
-          {site.name} name and mark — is the property of {site.name}{" "}
+          All content on this website, including text, graphics, logos, and the{" "}
+          {site.name} name and mark, is the property of {site.name}{" "}
           {site.tagline} and may not be copied, reproduced, or distributed
           without our written permission.
         </p>

@@ -16,8 +16,8 @@ export default function HomePage() {
       <StickyPanelSection
         hero={
           <OversizedHero
-            eyebrow="Nine Zero Four Beauty Bar"
-            intro="Advanced hair restoration — mesh and meshless hair-loss solutions, dimensional color, and natural extensions — in Ponte Vedra Beach."
+            eyebrow="Nine Zero Four Hair Salon"
+            intro="Advanced hair restoration in Ponte Vedra Beach: mesh and meshless hair-loss solutions, dimensional color, and natural extensions."
             cta={{ label: "Book a consultation", href: site.bookUrl }}
             headline="HAIR, STUDIED."
             mediaLabel="Soft, dimensional blonde waves finished at the chair"

@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "Hair Extensions",
   description:
-    "Hand-tied, tape-in, and K-tip hair extensions at Nine Zero Four Beauty Bar in Ponte Vedra Beach. Customized to your hair, lifestyle, and desired result.",
+    "Hand-tied, tape-in, and K-tip hair extensions at Nine Zero Four Hair Salon in Ponte Vedra Beach. Customized to your hair, lifestyle, and desired result.",
 };
 
 const methods = [
@@ -176,7 +176,7 @@ export default function HairExtensionsPage() {
               effect="rise"
               className="display-md max-w-[22ch]"
             >
-              Your Extensions Should Look Like Your Hair — Only Better.
+              Your Extensions Should Look Like Your Hair. Only Better.
             </SplitText>
             <RevealItem as="p" className="text-ink-soft">
               No two heads of hair are the same, which is why we don&rsquo;t believe
