@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import {
   Cormorant_Garamond,
   Montserrat,
@@ -66,6 +67,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Footer />
           </SmoothScroll>
         </MotionProvider>
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6b06214f29fc2dc00f52ce73"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
