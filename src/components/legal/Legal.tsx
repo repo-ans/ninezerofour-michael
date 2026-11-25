@@ -105,7 +105,7 @@ export function LegalContact() {
         <strong className="font-semibold text-ink">Address:</strong>
       </p>
       <p>
-        {site.name} {site.tagline}
+        {site.name} {site.tagline} ({site.legalName})
       </p>
       <p>
         {site.address.line1}, {site.address.line2}

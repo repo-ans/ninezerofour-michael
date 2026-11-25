@@ -15,6 +15,8 @@ export const site = {
   name: "Nine Zero Four",
   wordmark: "NINE ZERO FOUR",
   tagline: "Hair Salon",
+  /** Registered legal entity operating the salon — used in legal/contact copy. */
+  legalName: "Nine Zero Four and Co LLC",
   /** Short positioning line — salon / credential-forward register. */
   descriptor:
     "A Ponte Vedra Beach studio for advanced hair restoration: mesh and meshless hair-loss solutions, dimensional color, and natural extensions",
